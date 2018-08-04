@@ -12,7 +12,7 @@ import { WebBrowser } from 'expo';
 
 import { MonoText } from '../components/StyledText';
 
-export default class HomeScreen extends React.Component {
+export default class ScheduleScreen extends React.Component {
   static navigationOptions = {
     header: null,
   };
@@ -37,8 +37,8 @@ export default class HomeScreen extends React.Component {
 
             <Text style={styles.getStartedText}>Get started by opening</Text>
 
-            <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
-              <MonoText style={styles.codeHighlightText}>screens/HomeScreen.js</MonoText>
+            <View style={[styles.codeHighlightContainer, styles.ScheduleScreenFilename]}>
+              <MonoText style={styles.codeHighlightText}>screens/ScheduleScreen.js</MonoText>
             </View>
 
             <Text style={styles.getStartedText}>
@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginHorizontal: 50,
   },
-  homeScreenFilename: {
+  ScheduleScreenFilename: {
     marginVertical: 7,
   },
   codeHighlightText: {

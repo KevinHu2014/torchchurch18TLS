@@ -3,16 +3,63 @@ import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
 import TabBarIcon from '../components/TabBarIcon';
-import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import ScheduleScreen from '../screens/ScheduleScreen';
+import SpeakerScreen from '../screens/SpeakerScreen';
+import NoteScreen from '../screens/NoteScreen';
+import InformationScreen from '../screens/InformationScreen';
 
-const HomeStack = createStackNavigator({
-  Home: HomeScreen,
+const ScheduleStack = createStackNavigator({
+  Schedule: ScheduleScreen,
 });
 
-HomeStack.navigationOptions = {
-  tabBarLabel: 'Home',
+ScheduleStack.navigationOptions = {
+  tabBarLabel: 'Schedule',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={
+        Platform.OS === 'ios'
+          ? `ios-calendar${focused ? '' : '-outline'}`
+          : 'md-calendar'
+      }
+    />
+  ),
+};
+
+const SpeakerStack = createStackNavigator({
+  Speaker: SpeakerScreen,
+});
+
+SpeakerStack.navigationOptions = {
+  tabBarLabel: 'Speaker',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === 'ios' ? `ios-person${focused ? '' : '-outline'}` : 'md-person'}
+    />
+  ),
+};
+
+const NoteStack = createStackNavigator({
+  Note: NoteScreen,
+});
+
+NoteStack.navigationOptions = {
+  tabBarLabel: 'Note',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === 'ios' ? `ios-book${focused ? '' : '-outline'}` : 'md-book'}
+    />
+  ),
+};
+
+const InformationStack = createStackNavigator({
+  Information: InformationScreen,
+});
+
+InformationStack.navigationOptions = {
+  tabBarLabel: 'Information',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -25,36 +72,9 @@ HomeStack.navigationOptions = {
   ),
 };
 
-const LinksStack = createStackNavigator({
-  Links: LinksScreen,
-});
-
-LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={Platform.OS === 'ios' ? `ios-link${focused ? '' : '-outline'}` : 'md-link'}
-    />
-  ),
-};
-
-const SettingsStack = createStackNavigator({
-  Settings: SettingsScreen,
-});
-
-SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={Platform.OS === 'ios' ? `ios-options${focused ? '' : '-outline'}` : 'md-options'}
-    />
-  ),
-};
-
 export default createBottomTabNavigator({
-  HomeStack,
-  LinksStack,
-  SettingsStack,
+  ScheduleStack,
+  SpeakerStack,
+  NoteStack,
+  InformationStack,
 });
