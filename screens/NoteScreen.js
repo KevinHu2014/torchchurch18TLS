@@ -2,6 +2,13 @@ import React from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
 import { ExpoLinksView } from '@expo/samples';
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingTop: 15,
+    backgroundColor: '#fff',
+  },
+});
 export default class NoteScreen extends React.Component {
   static navigationOptions = {
     title: 'Notes',
@@ -10,8 +17,8 @@ export default class NoteScreen extends React.Component {
       backgroundColor: '#de3c3c',
     },
     headerTitleStyle: {
-      color: '#fff'
-    }
+      color: '#fff',
+    },
   };
 
   render() {
@@ -24,11 +31,3 @@ export default class NoteScreen extends React.Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingTop: 15,
-    backgroundColor: '#fff',
-  },
-});

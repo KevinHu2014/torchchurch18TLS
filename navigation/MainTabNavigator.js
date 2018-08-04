@@ -1,12 +1,22 @@
+/* eslint-disable  react/prop-types */
 import React from 'react';
 import { Text, Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
-
 import TabBarIcon from '../components/TabBarIcon';
 import ScheduleScreen from '../screens/ScheduleScreen';
 import SpeakerScreen from '../screens/SpeakerScreen';
 import NoteScreen from '../screens/NoteScreen';
 import InformationScreen from '../screens/InformationScreen';
+
+const styles = {
+  activeTabText: {
+    textAlign: 'center',
+    backgroundColor: 'transparent',
+    color: '#929292',
+    fontSize: 10,
+    marginBottom: 1.5,
+  },
+};
 
 const ScheduleStack = createStackNavigator({
   Schedule: ScheduleScreen,
@@ -16,11 +26,15 @@ ScheduleStack.navigationOptions = {
   tabBarLabel: ({ focused }) => {
     console.log(focused);
     if (focused) {
-      return (<Text style={styles.activeTabText}>Schedule</Text>);
+      return (
+        <Text style={styles.activeTabText}>
+          Schedule
+        </Text>
+      );
     }
     return null;
   },
-  tabBarIcon: ({ focused }) => (
+  tabBarIcon: ({ focused }) => ( // eslint-disable-line
     <TabBarIcon
       focused={focused}
       name={
@@ -40,7 +54,11 @@ SpeakerStack.navigationOptions = {
   tabBarLabel: ({ focused }) => {
     console.log(focused);
     if (focused) {
-      return (<Text style={styles.activeTabText}>Speaker</Text>);
+      return (
+        <Text style={styles.activeTabText}>
+          Speaker
+        </Text>
+      );
     }
     return null;
   },
@@ -60,7 +78,11 @@ NoteStack.navigationOptions = {
   tabBarLabel: ({ focused }) => {
     console.log(focused);
     if (focused) {
-      return (<Text style={styles.activeTabText}>Note</Text>);
+      return (
+        <Text style={styles.activeTabText}>
+          Note
+        </Text>
+      );
     }
     return null;
   },
@@ -80,7 +102,11 @@ InformationStack.navigationOptions = {
   tabBarLabel: ({ focused }) => {
     console.log(focused);
     if (focused) {
-      return (<Text style={styles.activeTabText}>Information</Text>);
+      return (
+        <Text style={styles.activeTabText}>
+          Information
+        </Text>
+      );
     }
     return null;
   },
@@ -95,16 +121,6 @@ InformationStack.navigationOptions = {
     />
   ),
 };
-
-const styles = {
-  activeTabText: {
-    textAlign: 'center',
-    backgroundColor: 'transparent',
-    color: '#929292',
-    fontSize: 10,
-    marginBottom: 1.5,
-  }
-}
 
 export default createBottomTabNavigator({
   ScheduleStack,

@@ -9,8 +9,8 @@ export default class InformationScreen extends React.Component {
       backgroundColor: '#f7b32d',
     },
     headerTitleStyle: {
-      color: '#fff'
-    }
+      color: '#fff',
+    },
   };
 
   render() {
