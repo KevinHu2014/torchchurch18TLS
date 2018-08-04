@@ -5,6 +5,13 @@ import { ExpoLinksView } from '@expo/samples';
 export default class NoteScreen extends React.Component {
   static navigationOptions = {
     title: 'Notes',
+    headerStyle: {
+      height: 60,
+      backgroundColor: '#de3c3c',
+    },
+    headerTitleStyle: {
+      color: '#fff'
+    }
   };
 
   render() {

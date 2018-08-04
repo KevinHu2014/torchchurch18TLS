@@ -5,6 +5,13 @@ import { ExpoLinksView } from '@expo/samples';
 export default class SpeakerScreen extends React.Component {
   static navigationOptions = {
     title: 'Speaker',
+    headerStyle: {
+      height: 60,
+      backgroundColor: '#c00000',
+    },
+    headerTitleStyle: {
+      color: '#fff'
+    }
   };
 
   render() {
