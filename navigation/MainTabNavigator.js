@@ -1,5 +1,5 @@
 import React from 'react';
-import { Platform } from 'react-native';
+import { Text, Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
 import TabBarIcon from '../components/TabBarIcon';
@@ -13,7 +13,13 @@ const ScheduleStack = createStackNavigator({
 });
 
 ScheduleStack.navigationOptions = {
-  tabBarLabel: 'Schedule',
+  tabBarLabel: ({ focused }) => {
+    console.log(focused);
+    if (focused) {
+      return (<Text style={styles.activeTabText}>Schedule</Text>);
+    }
+    return null;
+  },
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -31,7 +37,13 @@ const SpeakerStack = createStackNavigator({
 });
 
 SpeakerStack.navigationOptions = {
-  tabBarLabel: 'Speaker',
+  tabBarLabel: ({ focused }) => {
+    console.log(focused);
+    if (focused) {
+      return (<Text style={styles.activeTabText}>Speaker</Text>);
+    }
+    return null;
+  },
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -45,7 +57,13 @@ const NoteStack = createStackNavigator({
 });
 
 NoteStack.navigationOptions = {
-  tabBarLabel: 'Note',
+  tabBarLabel: ({ focused }) => {
+    console.log(focused);
+    if (focused) {
+      return (<Text style={styles.activeTabText}>Note</Text>);
+    }
+    return null;
+  },
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -59,7 +77,13 @@ const InformationStack = createStackNavigator({
 });
 
 InformationStack.navigationOptions = {
-  tabBarLabel: 'Information',
+  tabBarLabel: ({ focused }) => {
+    console.log(focused);
+    if (focused) {
+      return (<Text style={styles.activeTabText}>Information</Text>);
+    }
+    return null;
+  },
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -71,6 +95,16 @@ InformationStack.navigationOptions = {
     />
   ),
 };
+
+const styles = {
+  activeTabText: {
+    textAlign: 'center',
+    backgroundColor: 'transparent',
+    color: '#929292',
+    fontSize: 10,
+    marginBottom: 1.5,
+  }
+}
 
 export default createBottomTabNavigator({
   ScheduleStack,
