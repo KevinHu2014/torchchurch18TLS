@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Platform, StatusBar, StyleSheet, View,
 } from 'react-native';
-import PropTypes from 'prop-types';
 import {
   AppLoading, Asset, Font, Icon,
 } from 'expo';
@@ -47,8 +46,7 @@ export default class App extends React.Component {
 
   render() {
     const { isLoadingComplete } = this.state;
-    const { skipLoadingScreen } = this.props;
-    if (!isLoadingComplete && !skipLoadingScreen) {
+    if (!isLoadingComplete) {
       return (
         <AppLoading
           startAsync={this.loadResourcesAsync}
@@ -65,7 +63,3 @@ export default class App extends React.Component {
     );
   }
 }
-
-App.propTypes = {
-  skipLoadingScreen: PropTypes.bool.isRequired,
-};

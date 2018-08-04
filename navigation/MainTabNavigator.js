@@ -7,6 +7,7 @@ import ScheduleScreen from '../screens/ScheduleScreen';
 import SpeakerScreen from '../screens/SpeakerScreen';
 import NoteScreen from '../screens/NoteScreen';
 import InformationScreen from '../screens/InformationScreen';
+import SpeakerInfoScreen from '../screens/SpeakerInfoScreen';
 
 const styles = {
   activeTabText: {
@@ -47,7 +48,21 @@ ScheduleStack.navigationOptions = {
 };
 
 const SpeakerStack = createStackNavigator({
-  Speaker: SpeakerScreen,
+  Speaker: {
+    screen: SpeakerScreen,
+    path: '/',
+    navigationOptions: () => ({
+      headerBackTitle: null,
+    }),
+  },
+  SpeakerInfo: {
+    screen: SpeakerInfoScreen,
+    path: '/people/:name',
+    navigationOptions: ({ navigation }) => ({
+      title: `${navigation.state.params.name}`,
+      headerTintColor: '#fff',
+    }),
+  },
 });
 
 SpeakerStack.navigationOptions = {
@@ -127,4 +142,6 @@ export default createBottomTabNavigator({
   SpeakerStack,
   NoteStack,
   InformationStack,
+}, {
+  initialRouteName: 'SpeakerStack', // init tab
 });
