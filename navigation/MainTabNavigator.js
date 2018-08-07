@@ -143,5 +143,5 @@ export default createBottomTabNavigator({
   NoteStack,
   InformationStack,
 }, {
-  initialRouteName: 'SpeakerStack', // init tab
+  initialRouteName: 'ScheduleStack', // init tab
 });

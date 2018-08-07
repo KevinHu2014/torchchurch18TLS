@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  ScrollView, StyleSheet, Image, View, 
+  ScrollView, StyleSheet, Image, View,
 } from 'react-native';
 import {
   Card,

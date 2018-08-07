@@ -20,7 +20,8 @@
     "react-native": "https://github.com/expo/react-native/archive/sdk-29.0.0.tar.gz",
     "react-native-paper": "^1.11.1",
     "react-navigation": "^2.9.3",
-    "react-navigation-tabs": "^0.6.0"
+    "react-navigation-tabs": "^0.6.0",
+    "rn-animated-tabs": "^1.0.4"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.6",
