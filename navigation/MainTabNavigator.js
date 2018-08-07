@@ -8,12 +8,13 @@ import SpeakerScreen from '../screens/SpeakerScreen';
 import NoteScreen from '../screens/NoteScreen';
 import InformationScreen from '../screens/InformationScreen';
 import SpeakerInfoScreen from '../screens/SpeakerInfoScreen';
+import Colors from '../constants/Colors';
 
 const styles = {
   activeTabText: {
     textAlign: 'center',
     backgroundColor: 'transparent',
-    color: '#929292',
+    color: Colors.tintColor,
     fontSize: 10,
     marginBottom: 1.5,
   },
@@ -45,6 +46,11 @@ ScheduleStack.navigationOptions = {
       }
     />
   ),
+  tabBarOptions: ({
+    style: {
+      backgroundColor: Colors.tabBar,
+    },
+  }),
 };
 
 const SpeakerStack = createStackNavigator({

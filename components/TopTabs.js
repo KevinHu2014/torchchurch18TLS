@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
 import { ListSection, ListItem, Divider } from 'react-native-paper';
-import { createMaterialTopTabNavigator } from 'react-navigation-tabs';
 
 const styles = StyleSheet.create({
   container: {
@@ -44,20 +43,5 @@ const Schedule = () => (
     </ListSection>
   </ScrollView>
 );
-const Day1 = () => (
-  <Schedule />
-);
 
-const Day2 = () => (
-  <Schedule />
-);
-
-const Day3 = () => (
-  <Schedule />
-);
-
-export default createMaterialTopTabNavigator({
-  Day1,
-  Day2,
-  Day3,
-});
+export default Schedule;
