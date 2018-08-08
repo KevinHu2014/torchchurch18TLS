@@ -9,6 +9,7 @@ import {
   Title,
   Paragraph,
 } from 'react-native-paper';
+import Colors from '../constants/Colors';
 
 
 const styles = StyleSheet.create({
@@ -33,17 +34,6 @@ const styles = StyleSheet.create({
 });
 
 export default class SpeakerInfo extends React.Component {
-  static navigationOptions = {
-    title: 'Speaker',
-    headerStyle: {
-      height: 60,
-      backgroundColor: '#c00000',
-    },
-    headerTitleStyle: {
-      color: '#fff',
-    },
-  };
-
   render() {
     const { navigation } = this.props;
     const img = navigation.getParam('img', 'https://portal.torchchurch.com/Activity/upload/2018062016130100237353622532273703665195.jpg');

@@ -21,12 +21,27 @@ const styles = {
 };
 
 const ScheduleStack = createStackNavigator({
-  Schedule: ScheduleScreen,
+  Schedule: {
+    screen: ScheduleScreen,
+    path: '/',
+    navigationOptions: () => ({
+      headerBackTitle: null,
+      title: 'Schedule',
+      headerStyle: {
+        height: 60,
+        backgroundColor: Colors.header,
+        borderBottomWidth: 0,
+      },
+      headerTitleStyle: {
+        color: Colors.headerText,
+        fontSize: 23,
+      },
+    }),
+  },
 });
 
 ScheduleStack.navigationOptions = {
   tabBarLabel: ({ focused }) => {
-    console.log(focused);
     if (focused) {
       return (
         <Text style={styles.activeTabText}>
@@ -59,6 +74,15 @@ const SpeakerStack = createStackNavigator({
     path: '/',
     navigationOptions: () => ({
       headerBackTitle: null,
+      title: 'Speaker',
+      headerStyle: {
+        height: 60,
+        backgroundColor: Colors.header,
+      },
+      headerTitleStyle: {
+        color: Colors.headerText,
+        fontSize: 23,
+      },
     }),
   },
   SpeakerInfo: {
@@ -66,14 +90,21 @@ const SpeakerStack = createStackNavigator({
     path: '/people/:name',
     navigationOptions: ({ navigation }) => ({
       title: `${navigation.state.params.name}`,
-      headerTintColor: '#fff',
+      headerTintColor: Colors.headerText,
+      headerStyle: {
+        height: 60,
+        backgroundColor: Colors.header,
+      },
+      headerTitleStyle: {
+        color: Colors.headerText,
+        fontSize: 23,
+      },
     }),
   },
 });
 
 SpeakerStack.navigationOptions = {
   tabBarLabel: ({ focused }) => {
-    console.log(focused);
     if (focused) {
       return (
         <Text style={styles.activeTabText}>
@@ -89,15 +120,34 @@ SpeakerStack.navigationOptions = {
       name={Platform.OS === 'ios' ? `ios-person${focused ? '' : '-outline'}` : 'md-person'}
     />
   ),
+  tabBarOptions: ({
+    style: {
+      backgroundColor: Colors.tabBar,
+    },
+  }),
 };
 
 const NoteStack = createStackNavigator({
-  Note: NoteScreen,
+  Note: {
+    screen: NoteScreen,
+    path: '/',
+    navigationOptions: () => ({
+      headerBackTitle: null,
+      title: 'Note',
+      headerStyle: {
+        height: 60,
+        backgroundColor: Colors.header,
+      },
+      headerTitleStyle: {
+        color: Colors.headerText,
+        fontSize: 23,
+      },
+    }),
+  },
 });
 
 NoteStack.navigationOptions = {
   tabBarLabel: ({ focused }) => {
-    console.log(focused);
     if (focused) {
       return (
         <Text style={styles.activeTabText}>
@@ -113,15 +163,36 @@ NoteStack.navigationOptions = {
       name={Platform.OS === 'ios' ? `ios-book${focused ? '' : '-outline'}` : 'md-book'}
     />
   ),
+  tabBarOptions: ({
+    style: {
+      backgroundColor: Colors.tabBar,
+    },
+  }),
 };
 
 const InformationStack = createStackNavigator({
-  Information: InformationScreen,
+  Information: {
+    screen: InformationScreen,
+    path: '/',
+    navigationOptions: () => ({
+      headerBackTitle: null,
+      title: 'Information',
+      headerStyle: {
+        height: 60,
+        backgroundColor: Colors.header,
+        borderBottomWidth: 0,
+        elevation: 0,
+      },
+      headerTitleStyle: {
+        color: Colors.headerText,
+        fontSize: 23,
+      },
+    }),
+  },
 });
 
 InformationStack.navigationOptions = {
   tabBarLabel: ({ focused }) => {
-    console.log(focused);
     if (focused) {
       return (
         <Text style={styles.activeTabText}>
@@ -141,6 +212,11 @@ InformationStack.navigationOptions = {
       }
     />
   ),
+  tabBarOptions: ({
+    style: {
+      backgroundColor: Colors.tabBar,
+    },
+  }),
 };
 
 export default createBottomTabNavigator({

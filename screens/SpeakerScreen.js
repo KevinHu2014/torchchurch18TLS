@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { ScrollView, StyleSheet } from 'react-native';
 import { ListItem, ListAccordion } from 'react-native-paper';
 
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -13,17 +12,6 @@ const styles = StyleSheet.create({
 });
 
 export default class SpeakerScreen extends React.Component {
-  static navigationOptions = {
-    title: 'Speaker',
-    headerStyle: {
-      height: 60,
-      backgroundColor: '#c00000',
-    },
-    headerTitleStyle: {
-      color: '#fff',
-    },
-  };
-
   render() {
     const { navigation } = this.props;
     return (
