@@ -31,6 +31,7 @@ const ScheduleStack = createStackNavigator({
         height: 60,
         backgroundColor: Colors.header,
         borderBottomWidth: 0,
+        elevation: 0,
       },
       headerTitleStyle: {
         color: Colors.headerText,
