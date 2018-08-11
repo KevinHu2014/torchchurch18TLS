@@ -91,13 +91,13 @@ const SpeakerStack = createStackNavigator({
     path: '/people/:name',
     navigationOptions: ({ navigation }) => ({
       title: `${navigation.state.params.name}`,
-      headerTintColor: Colors.headerText,
+      headerTintColor: Colors.header,
       headerStyle: {
         height: 60,
-        backgroundColor: Colors.header,
+        backgroundColor: Colors.headerText,
       },
       headerTitleStyle: {
-        color: Colors.headerText,
+        color: Colors.header,
         fontSize: 23,
       },
     }),
