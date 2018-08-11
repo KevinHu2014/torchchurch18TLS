@@ -9,10 +9,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  center: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
 });
 export default class ScheduleScreen extends React.Component {
   constructor(props) {

@@ -1,21 +1,46 @@
 import React from 'react';
-import { ExpoConfigView } from '@expo/samples';
+import { StyleSheet, View } from 'react-native';
+import AnimatedTopTabs from '../components/AnimatedTopTabs';
+import LinkList from '../components/LinkList';
 
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
 export default class InformationScreen extends React.Component {
-  static navigationOptions = {
-    title: 'Information',
-    headerStyle: {
-      height: 60,
-      backgroundColor: '#f7b32d',
-    },
-    headerTitleStyle: {
-      color: '#fff',
-    },
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentTab: 0,
+    };
+  }
+
+  handleTabChange = value => this.setState({ currentTab: value });
+
+  renderContent() {
+    const { currentTab } = this.state;
+    if (currentTab === 1) {
+      return (
+        <LinkList />
+      );
+    }
+    return true;
+  }
 
   render() {
-    /* Go ahead and delete ExpoConfigView and replace it with your
-     * content, we just wanted to give you a quick view of your config */
-    return <ExpoConfigView />;
+    return (
+      <View style={styles.container}>
+        <AnimatedTopTabs
+          height={30}
+          activeTabIndicatorColor="#CEA34E"
+          containerStyle={{ backgroundColor: '#fff' }}
+          tabTitles={['About', 'Links', 'Notifications']}
+          onChangeTab={this.handleTabChange}
+        />
+        {this.renderContent()}
+      </View>
+    );
   }
 }
