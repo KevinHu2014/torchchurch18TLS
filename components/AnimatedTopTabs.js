@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   tabText: {
-    color: '#6B6868',
+    color: '#C0C0C0',
     fontSize: 16,
     fontWeight: '500',
     padding: 2,
