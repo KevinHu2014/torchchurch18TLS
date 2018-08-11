@@ -230,5 +230,5 @@ export default createBottomTabNavigator({
   NoteStack,
   InformationStack,
 }, {
-  initialRouteName: 'InformationStack', // init tab
+  initialRouteName: 'NoteStack', // init tab
 });
