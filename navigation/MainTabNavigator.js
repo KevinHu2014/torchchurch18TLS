@@ -134,7 +134,7 @@ const NoteStack = createStackNavigator({
     path: '/',
     navigationOptions: () => ({
       headerBackTitle: null,
-      title: 'Note',
+      title: 'Information',
       headerStyle: {
         height: 60,
         backgroundColor: Colors.header,
@@ -152,7 +152,7 @@ NoteStack.navigationOptions = {
     if (focused) {
       return (
         <Text style={styles.activeTabText}>
-          Note
+          Information
         </Text>
       );
     }
@@ -161,7 +161,11 @@ NoteStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? `ios-book${focused ? '' : '-outline'}` : 'md-book'}
+      name={
+        Platform.OS === 'ios'
+          ? `ios-information-circle${focused ? '' : '-outline'}`
+          : 'md-information-circle'
+      }
     />
   ),
   tabBarOptions: ({
@@ -177,7 +181,7 @@ const InformationStack = createStackNavigator({
     path: '/',
     navigationOptions: () => ({
       headerBackTitle: null,
-      title: 'Information',
+      title: 'More',
       headerStyle: {
         height: 60,
         backgroundColor: Colors.header,
@@ -197,7 +201,7 @@ InformationStack.navigationOptions = {
     if (focused) {
       return (
         <Text style={styles.activeTabText}>
-          Information
+          More
         </Text>
       );
     }
@@ -208,8 +212,8 @@ InformationStack.navigationOptions = {
       focused={focused}
       name={
         Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
+          ? `ios-more${focused ? '' : '-outline'}`
+          : 'md-more'
       }
     />
   ),
