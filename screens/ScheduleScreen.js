@@ -1,8 +1,7 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import RNAnimatedTabs from 'rn-animated-tabs';
+import { StyleSheet, View } from 'react-native';
+import AnimatedTopTabs from '../components/AnimatedTopTabs';
 import TopTabs from '../components/TopTabs';
-import Colors from '../constants/Colors';
 
 const DATA = ['Top Tab 1 Content', 'Extra Stuff for Top Tab 2', 'More stuff for Top Tab 3'];
 
@@ -29,7 +28,7 @@ export default class ScheduleScreen extends React.Component {
     const { currentTab } = this.state;
     return (
       <View style={styles.container}>
-        <RNAnimatedTabs
+        <AnimatedTopTabs
           height={30}
           activeTabIndicatorColor="#CEA34E"
           containerStyle={{ backgroundColor: '#fff' }}
