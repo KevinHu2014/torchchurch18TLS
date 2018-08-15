@@ -22,7 +22,7 @@ export default class ScheduleScreen extends React.Component {
   }
 
   componentDidMount() {
-    const url = 'https://gist.githubusercontent.com/KevinHu2014/bb2f9e96dba15f6bd26804874f3ff0a9/raw/b54dba85e9e587e7a3ac795093ad673ed57a22f5/tlsschedule.json';
+    const url = 'https://gist.githubusercontent.com/KevinHu2014/bb2f9e96dba15f6bd26804874f3ff0a9/raw/5a8ebb0aa830493a94d962ff427d61657a798f23/tlsschedule.json';
     axios.get(url)
       .then((response) => {
         console.log(response.data);
