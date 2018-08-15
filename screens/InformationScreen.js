@@ -1,5 +1,6 @@
 import React from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
+import { WebBrowser } from 'expo';
 import { ListItem, ListSection, Divider } from 'react-native-paper';
 import PropTypes from 'prop-types';
 
@@ -19,6 +20,9 @@ export default class InformationScreen extends React.Component {
           <ListItem
             title="與會前通知"
             icon="notifications"
+            onPress={() => {
+              navigation.navigate('PreNotification');
+            }}
           />
           <Divider />
           <ListItem
@@ -47,6 +51,9 @@ export default class InformationScreen extends React.Component {
           <ListItem
             title="參與者回饋"
             icon="feedback"
+            onPress={() => {
+              WebBrowser.openBrowserAsync('https://goo.gl/forms/GBPu3QaQa0DKIqW73');
+            }}
           />
           <Divider />
         </ListSection>
