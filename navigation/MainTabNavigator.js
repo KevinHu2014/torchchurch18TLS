@@ -8,7 +8,8 @@ import SpeakerScreen from '../screens/SpeakerScreen';
 import InformationScreen from '../screens/InformationScreen';
 import MoreScreen from '../screens/MoreScreen';
 import SpeakerInfoScreen from '../screens/SpeakerInfoScreen';
-import QAScreen from '../screens/QAScreen';
+import QAScreen from '../screens/information/QAScreen';
+import PreNotificationScreen from '../screens/information/PreNotificationScreen';
 import Colors from '../constants/Colors';
 
 const styles = {
@@ -151,6 +152,22 @@ const InformationStack = createStackNavigator({
     path: '/qa',
     navigationOptions: () => ({
       title: '注意事項Q&A',
+      headerTintColor: Colors.header,
+      headerStyle: {
+        height: 60,
+        backgroundColor: Colors.headerText,
+      },
+      headerTitleStyle: {
+        color: Colors.header,
+        fontSize: 23,
+      },
+    }),
+  },
+  PreNotification: {
+    screen: PreNotificationScreen,
+    path: '/prenotification',
+    navigationOptions: () => ({
+      title: '行前通知',
       headerTintColor: Colors.header,
       headerStyle: {
         height: 60,
