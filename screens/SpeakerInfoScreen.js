@@ -9,8 +9,6 @@ import {
   Title,
   Paragraph,
 } from 'react-native-paper';
-import Colors from '../constants/Colors';
-
 
 const styles = StyleSheet.create({
   container: {
