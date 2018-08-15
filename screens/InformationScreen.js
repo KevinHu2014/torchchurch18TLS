@@ -1,46 +1,62 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import AnimatedTopTabs from '../components/AnimatedTopTabs';
-import LinkList from '../components/LinkList';
-
+import { ScrollView, StyleSheet } from 'react-native';
+import { ListItem, ListSection, Divider } from 'react-native-paper';
+import PropTypes from 'prop-types';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingTop: 15,
+    backgroundColor: '#fff',
   },
 });
 export default class InformationScreen extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentTab: 0,
-    };
-  }
-
-  handleTabChange = value => this.setState({ currentTab: value });
-
-  renderContent() {
-    const { currentTab } = this.state;
-    if (currentTab === 1) {
-      return (
-        <LinkList />
-      );
-    }
-    return true;
-  }
-
   render() {
+    const { navigation } = this.props;
     return (
-      <View style={styles.container}>
-        <AnimatedTopTabs
-          height={30}
-          activeTabIndicatorColor="#CEA34E"
-          containerStyle={{ backgroundColor: '#fff' }}
-          tabTitles={['About', 'Links', 'Notifications']}
-          onChangeTab={this.handleTabChange}
-        />
-        {this.renderContent()}
-      </View>
+      <ScrollView style={styles.container}>
+        <ListSection title="活動資訊">
+          <ListItem
+            title="與會前通知"
+            icon="notifications"
+          />
+          <Divider />
+          <ListItem
+            title="Q&A"
+            icon="question-answer"
+            onPress={() => {
+              navigation.navigate('QA');
+            }}
+          />
+          <Divider />
+          <ListItem
+            title="牧師的話"
+            icon="format-quote"
+          />
+          <Divider />
+          <ListItem
+            title="擴張- 主題曲歌詞"
+            icon="queue-music"
+          />
+          <Divider />
+          <ListItem
+            title="場地資訊"
+            icon="map"
+          />
+          <Divider />
+          <ListItem
+            title="參與者回饋"
+            icon="feedback"
+          />
+          <Divider />
+        </ListSection>
+      </ScrollView>
     );
   }
 }
+
+InformationScreen.propTypes = {
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func.isRequired,
+  }).isRequired,
+};

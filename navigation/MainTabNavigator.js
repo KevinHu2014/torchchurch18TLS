@@ -5,8 +5,8 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 import TabBarIcon from '../components/TabBarIcon';
 import ScheduleScreen from '../screens/ScheduleScreen';
 import SpeakerScreen from '../screens/SpeakerScreen';
-import NoteScreen from '../screens/NoteScreen';
 import InformationScreen from '../screens/InformationScreen';
+import MoreScreen from '../screens/MoreScreen';
 import SpeakerInfoScreen from '../screens/SpeakerInfoScreen';
 import QAScreen from '../screens/QAScreen';
 import Colors from '../constants/Colors';
@@ -129,9 +129,9 @@ SpeakerStack.navigationOptions = {
   }),
 };
 
-const NoteStack = createStackNavigator({
-  Note: {
-    screen: NoteScreen,
+const InformationStack = createStackNavigator({
+  Information: {
+    screen: InformationScreen,
     path: '/',
     navigationOptions: () => ({
       headerBackTitle: null,
@@ -164,7 +164,7 @@ const NoteStack = createStackNavigator({
   },
 });
 
-NoteStack.navigationOptions = {
+InformationStack.navigationOptions = {
   tabBarLabel: ({ focused }) => {
     if (focused) {
       return (
@@ -192,9 +192,9 @@ NoteStack.navigationOptions = {
   }),
 };
 
-const InformationStack = createStackNavigator({
-  Information: {
-    screen: InformationScreen,
+const MoreStack = createStackNavigator({
+  More: {
+    screen: MoreScreen,
     path: '/',
     navigationOptions: () => ({
       headerBackTitle: null,
@@ -213,7 +213,7 @@ const InformationStack = createStackNavigator({
   },
 });
 
-InformationStack.navigationOptions = {
+MoreStack.navigationOptions = {
   tabBarLabel: ({ focused }) => {
     if (focused) {
       return (
@@ -244,8 +244,8 @@ InformationStack.navigationOptions = {
 export default createBottomTabNavigator({
   ScheduleStack,
   SpeakerStack,
-  NoteStack,
   InformationStack,
+  MoreStack,
 }, {
-  initialRouteName: 'NoteStack', // init tab
+  initialRouteName: 'InformationStack', // init tab
 });
