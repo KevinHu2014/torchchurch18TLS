@@ -55,6 +55,7 @@ export default class TransformText extends React.Component {
         transform: [
           { perspective: 300 },
           { rotateX: '30deg' },
+          { scaleY: 4 },
         ],
       },
       contentContainer: {
