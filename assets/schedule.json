@@ -1,51 +1,100 @@
 {
-  "Day1":
-      [{
-        "name": "入場",
-        "start": "7 Sep 2018 19:00:00 GMT+0800",
-        "end": "7 Sep 2018 19:30:00 GMT+0800"
-      },
-      {
-        "name": "敬拜",
-        "start": "7 Sep 2018 19:30:00 GMT+0800",
-        "end": "7 Sep 2018 20:00:00 GMT+0800",
-        "speaker": "楊永民 主任牧師",
-        "outline": "Ad incididunt id enim sit consequat esse sint mollit mollit sint sint eiusmod anim officia. Lorem culpa laborum pariatur nisi. Nostrud est deserunt nisi exercitation non culpa excepteur."
-      }],
-  "Day2":
-      [{
-        "name": "入場",
-        "start": "8 Sep 2018 09:00:00 GMT+0800",
-        "end": "8 Sep 2018 09:30:00 GMT+0800"
-      },
-      {
-        "name": "講座ㄧ",
-        "start": "8 Sep 2018 09:30:00 GMT+0800",
-        "end": "8 Sep 2018 12:30:00 GMT+0800",
-        "speaker": "楊永民 主任牧師",
-        "outline": "Ad incididunt id enim sit consequat esse sint mollit mollit sint sint eiusmod anim officia. Lorem culpa laborum pariatur nisi. Nostrud est deserunt nisi exercitation non culpa excepteur."
-      },
-      {
-        "name": "午餐",
-        "start": "8 Sep 2018 12:30:00 GMT+0800",
-        "end": "8 Sep 2018 13:30:00 GMT+0800"
-      }],
-    "Day3":
-      [{
-        "name": "入場",
-        "start": "9 Sep 2018 09:00:00 GMT+0800",
-        "end": "9 Sep 2018 09:30:00 GMT+0800"
-      },
-      {
-        "name": "講座二",
-        "start": "9 Sep 2018 09:30:00 GMT+0800",
-        "end": "9 Sep 2018 12:30:00 GMT+0800",
-        "speaker": "楊永民 主任牧師",
-        "outline": "Ad incididunt id enim sit consequat esse sint mollit mollit sint sint eiusmod anim officia. Lorem culpa laborum pariatur nisi. Nostrud est deserunt nisi exercitation non culpa excepteur."
-      },
-      {
-        "name": "午餐",
-        "start": "9 Sep 2018 12:30:00 GMT+0800",
-        "end": "9 Sep 2018 13:30:00 GMT+0800"
-      }]
+	"Day1": [{
+		"name": "開放進場",
+		"start": "7 Sep 2018 19:00:00 GMT+0800",
+		"end": "7 Sep 2018 19:30:00 GMT+0800"
+	},
+	{
+		"name": "Session One(敬拜之夜)",
+		"start": "7 Sep 2018 19:30:00 GMT+0800",
+		"end": "7 Sep 2018 21:30:00 GMT+0800",
+		"speaker": "楊永民 主任牧師",
+		"outline": "擴張"
+	}],
+	"Day2": [{
+		"name": "開放進場",
+		"start": "8 Sep 2018 09:10:00 GMT+0800",
+		"end": "8 Sep 2018 09:30:00 GMT+0800"
+	},
+	{
+		"name": "Session Two",
+		"start": "8 Sep 2018 09:30:00 GMT+0800",
+		"end": "8 Sep 2018 11:00:00 GMT+0800",
+    "speaker": "錢玉芬 教授",
+    "topic": "擴張的組織圖",
+		"outline": "生命擴張的三面向\n一、寬度\n 接納與我們不同的人\n經文：\n以弗所書4：11-12\nV11 他所賜的，有使徒，有先知，有傳福音的，有牧師和教師，\nV12 為要成全聖徒，各盡其職，建立基督的身體\n二、高度\n擁有屬天的眼光\n經文：\n詩篇73：17\nV17 等我進了　神的聖所，思想他們的結局。\n三、深度\n深入探索內在自我\n經文：詩篇42：7\nV07 你的瀑布發聲，深淵就與深淵響應；你的波浪洪濤漫過我身。\n"
+	},
+	{
+		"name": "休息",
+		"start": "8 Sep 2018 11:00:00 GMT+0800",
+		"end": "8 Sep 2018 11:20:00 GMT+0800"
+	},
+	{
+		"name": "Session Three",
+		"start": "8 Sep 2018 11:20:00 GMT+0800",
+		"end": "8 Sep 2018 12:00:00 GMT+0800",
+		"speaker": "錢玉芬 教授",
+		"outline": "訪談"
+	},
+	{
+		"name": "午餐/休息",
+		"start": "8 Sep 2018 12:00:00 GMT+0800",
+		"end": "8 Sep 2018 13:40:00 GMT+0800"
+	},
+	{
+		"name": "開放進場",
+		"start": "8 Sep 2018 13:40:00 GMT+0800",
+		"end": "8 Sep 2018 14:00:00 GMT+0800"
+	},
+	{
+		"name": "Session Four",
+		"start": "8 Sep 2018 14:00:00 GMT+0800",
+		"end": "8 Sep 2018 15:20:00 GMT+0800",
+		"speaker": "吳明凱 宣教士",
+		"outline": "擴張"
+	},
+	{
+		"name": "休息",
+		"start": "8 Sep 2018 15:20:00 GMT+0800",
+		"end": "8 Sep 2018 15:40:00 GMT+0800"
+	},
+	{
+		"name": "Session Five",
+		"start": "8 Sep 2018 15:40:00 GMT+0800",
+		"end": "8 Sep 2018 16:30:00 GMT+0800",
+		"speaker": "吳明凱 宣教士",
+		"outline": "訪談"
+	},
+	{
+		"name": "晚餐/休息",
+		"start": "8 Sep 2018 16:30:00 GMT+0800",
+		"end": "8 Sep 2018 18:00:00 GMT+0800"
+	},
+	{
+		"name": "開放進場",
+		"start": "8 Sep 2018 18:00:00 GMT+0800",
+		"end": "8 Sep 2018 18:30:00 GMT+0800"
+	},
+	{
+		"name": "Session Six",
+		"start": "8 Sep 2018 18:30:00 GMT+0800",
+		"end": "8 Sep 2018 20:30:00 GMT+0800",
+		"speaker": "Ron Gardiner 牧師",
+		"outline": "擴張"
+	}],
+	"Day3": [
+	{
+		"name": "特會主日-1",
+		"start": "9 Sep 2018 10:30:00 GMT+0800",
+		"end": "9 Sep 2018 12:00:00 GMT+0800",
+		"speaker": "Ron Gardiner 牧師",
+		"outline": "擴張"
+	},
+	{
+		"name": "特會主日-2",
+		"start": "9 Sep 2018 13:00:00 GMT+0800",
+		"end": "9 Sep 2018 14:30:00 GMT+0800",
+		"speaker": "吳明凱 宣教士",
+		"outline": "擴張"
+	}]
 }
