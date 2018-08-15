@@ -8,6 +8,7 @@ import SpeakerScreen from '../screens/SpeakerScreen';
 import NoteScreen from '../screens/NoteScreen';
 import InformationScreen from '../screens/InformationScreen';
 import SpeakerInfoScreen from '../screens/SpeakerInfoScreen';
+import QAScreen from '../screens/QAScreen';
 import Colors from '../constants/Colors';
 
 const styles = {
@@ -141,6 +142,22 @@ const NoteStack = createStackNavigator({
       },
       headerTitleStyle: {
         color: Colors.headerText,
+        fontSize: 23,
+      },
+    }),
+  },
+  QA: {
+    screen: QAScreen,
+    path: '/qa',
+    navigationOptions: () => ({
+      title: '注意事項Q&A',
+      headerTintColor: Colors.header,
+      headerStyle: {
+        height: 60,
+        backgroundColor: Colors.headerText,
+      },
+      headerTitleStyle: {
+        color: Colors.header,
         fontSize: 23,
       },
     }),

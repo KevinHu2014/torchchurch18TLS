@@ -1,6 +1,7 @@
 import React from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
 import { ListItem, ListSection, Divider } from 'react-native-paper';
+import PropTypes from 'prop-types';
 
 const styles = StyleSheet.create({
   container: {
@@ -11,6 +12,7 @@ const styles = StyleSheet.create({
 });
 export default class NoteScreen extends React.Component {
   render() {
+    const { navigation } = this.props;
     return (
       <ScrollView style={styles.container}>
         <ListSection title="活動資訊">
@@ -22,6 +24,9 @@ export default class NoteScreen extends React.Component {
           <ListItem
             title="Q&A"
             icon="question-answer"
+            onPress={() => {
+              navigation.navigate('QA');
+            }}
           />
           <Divider />
           <ListItem
@@ -49,3 +54,9 @@ export default class NoteScreen extends React.Component {
     );
   }
 }
+
+NoteScreen.propTypes = {
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func.isRequired,
+  }).isRequired,
+};
