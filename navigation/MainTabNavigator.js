@@ -10,6 +10,7 @@ import MoreScreen from '../screens/MoreScreen';
 import SpeakerInfoScreen from '../screens/SpeakerInfoScreen';
 import QAScreen from '../screens/information/QAScreen';
 import PreNotificationScreen from '../screens/information/PreNotificationScreen';
+import LetterScreen from '../screens/information/LetterScreen';
 import Colors from '../constants/Colors';
 
 const styles = {
@@ -168,6 +169,22 @@ const InformationStack = createStackNavigator({
     path: '/prenotification',
     navigationOptions: () => ({
       title: '行前通知',
+      headerTintColor: Colors.header,
+      headerStyle: {
+        height: 60,
+        backgroundColor: Colors.headerText,
+      },
+      headerTitleStyle: {
+        color: Colors.header,
+        fontSize: 23,
+      },
+    }),
+  },
+  Letter: {
+    screen: LetterScreen,
+    path: '/letter',
+    navigationOptions: () => ({
+      title: '牧師的話',
       headerTintColor: Colors.header,
       headerStyle: {
         height: 60,

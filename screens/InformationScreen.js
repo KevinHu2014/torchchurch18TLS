@@ -36,6 +36,9 @@ export default class InformationScreen extends React.Component {
           <ListItem
             title="牧師的話"
             icon="format-quote"
+            onPress={() => {
+              navigation.navigate('Letter');
+            }}
           />
           <Divider />
           <ListItem
