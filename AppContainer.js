@@ -1,5 +1,6 @@
 import { Notifications } from 'expo';
 import React from 'react';
+import { NavigationActions } from 'react-navigation';
 import registerForPushNotificationsAsync from './api/registerForPushNotificationsAsync';
 import AppNavigator from './navigation/AppNavigator';
 
@@ -13,9 +14,15 @@ export default class AppContainer extends React.Component {
   }
 
   _handleNotification = ({ origin, data }) => {
+    // const { navigation } = this.props;
+    console.log(this.props);
     console.log(`Push notification ${origin} with data: ${JSON.stringify(data)}`);
     console.log(data.title);
     console.log(data.content);
+    // call navigate for AppNavigator here:
+    this.navigator && this.navigator.dispatch(
+      NavigationActions.navigate({ routeName: data.path }),
+    );
   };
 
   _registerForPushNotifications() {
@@ -31,7 +38,9 @@ export default class AppContainer extends React.Component {
 
   render() {
     return (
-      <AppNavigator />
+      <AppNavigator
+        ref={(nav) => { this.navigator = nav; }}
+      />
     );
   }
 }
