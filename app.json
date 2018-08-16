@@ -21,7 +21,12 @@
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier": "com.tls18torchchurch",
       "supportsTablet": true
+    },
+    "android": {
+      "package": "com.tls18torchchurch",
+      "googleServicesFile": "./google-services.json"
     }
   }
 }

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "979370412353",
+    "firebase_url": "https://tls2018-6a8fb.firebaseio.com",
+    "project_id": "tls2018-6a8fb",
+    "storage_bucket": "tls2018-6a8fb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:979370412353:android:4c0a39f698db7696",
+        "android_client_info": {
+          "package_name": "com.tls18torchchurch"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "979370412353-oqsbsrfg1rena3i5vjhfo9m9kckbs3mk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyT4UvPYY9Ogv2B-oW2-gbB5mcGW__s54"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
