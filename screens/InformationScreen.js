@@ -4,6 +4,7 @@ import { WebBrowser } from 'expo';
 import { ListItem, ListSection, Divider } from 'react-native-paper';
 import PropTypes from 'prop-types';
 
+let times = 0;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -12,8 +13,10 @@ const styles = StyleSheet.create({
   },
 });
 export default class InformationScreen extends React.Component {
+
   render() {
     const { navigation } = this.props;
+    const { time } = this.props;
     return (
       <ScrollView style={styles.container}>
         <ListSection title="活動資訊">
@@ -59,6 +62,16 @@ export default class InformationScreen extends React.Component {
             }}
           />
           <Divider />
+          <ListItem
+            title=" "
+            onPress={() => {
+              times += 1;
+              if (times > 10) {
+                navigation.navigate('Feedback');
+                times = 0;
+              }
+            }}
+          />
         </ListSection>
       </ScrollView>
     );

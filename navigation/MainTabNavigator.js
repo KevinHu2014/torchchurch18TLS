@@ -11,6 +11,7 @@ import SpeakerInfoScreen from '../screens/SpeakerInfoScreen';
 import QAScreen from '../screens/information/QAScreen';
 import PreNotificationScreen from '../screens/information/PreNotificationScreen';
 import LetterScreen from '../screens/information/LetterScreen';
+import FeedBackScreen from '../components/TransformText';
 import Colors from '../constants/Colors';
 
 const styles = {
@@ -75,7 +76,7 @@ ScheduleStack.navigationOptions = {
 const SpeakerStack = createStackNavigator({
   Speaker: {
     screen: SpeakerScreen,
-    path: '/',
+    path: '/speaker',
     navigationOptions: () => ({
       headerBackTitle: null,
       title: 'Speaker',
@@ -91,7 +92,7 @@ const SpeakerStack = createStackNavigator({
   },
   SpeakerInfo: {
     screen: SpeakerInfoScreen,
-    path: '/people/:name',
+    path: '/speakerinfo/:name',
     navigationOptions: ({ navigation }) => ({
       title: `${navigation.state.params.name}`,
       headerTintColor: Colors.header,
@@ -134,7 +135,7 @@ SpeakerStack.navigationOptions = {
 const InformationStack = createStackNavigator({
   Information: {
     screen: InformationScreen,
-    path: '/',
+    path: '/information',
     navigationOptions: () => ({
       headerBackTitle: null,
       title: 'Information',
@@ -196,6 +197,13 @@ const InformationStack = createStackNavigator({
       },
     }),
   },
+  Feedback: {
+    screen: FeedBackScreen,
+    path: '/feedback',
+    navigationOptions: () => ({
+      header: null,
+    }),
+  },
 });
 
 InformationStack.navigationOptions = {
@@ -229,7 +237,7 @@ InformationStack.navigationOptions = {
 const MoreStack = createStackNavigator({
   More: {
     screen: MoreScreen,
-    path: '/',
+    path: '/more',
     navigationOptions: () => ({
       headerBackTitle: null,
       title: 'More',

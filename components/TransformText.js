@@ -1,36 +1,28 @@
 import * as React from 'react';
 import {
-  ScrollView, StyleSheet, View,
+  ScrollView, View,
 } from 'react-native';
-import { Paragraph, Title, Button } from 'react-native-paper';
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: 'black',
-//     transform: [
-//       { perspective: 400 },
-//       // { rotateZ: '0.785398rad' },
-//       { rotateX: '30deg' },
-//     ],
-//   },
-//   contentContainer: {
-//     paddingTop: 30,
-//     margin: 30,
-//     alignItems: 'center',
-//   },
-// });
+import PropTypes from 'prop-types';
+import { Font } from 'expo';
+import { Paragraph, Title } from 'react-native-paper';
 
 export default class TransformText extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       start: 0,
+      show: false,
+
     };
     this.scrolling = this.scrolling.bind(this);
   }
 
-  componentDidMount() {
+  async componentDidMount() {
+    await Font.loadAsync({
+      'pathway-gothic-one': require('../assets/fonts/PathwayGothicOne-Regular.ttf'),
+    });
+
+    this.setState({ show: true });
     this.activeInterval = setInterval(this.scrolling, 100);
   }
 
@@ -38,9 +30,8 @@ export default class TransformText extends React.Component {
     clearInterval(this.activeInterval);
   }
 
-  isCloseToBottom = ({ layoutMeasurement, contentOffset, contentSize }) => {
-    return contentOffset.y >= contentSize.height + layoutMeasurement.height;
-  };
+  isCloseToBottom = ({ layoutMeasurement, contentOffset, contentSize }) => contentOffset.y >= contentSize.height
+  ;
 
   scrolling() {
     const { start } = this.state;
@@ -55,7 +46,7 @@ export default class TransformText extends React.Component {
         transform: [
           { perspective: 300 },
           { rotateX: '30deg' },
-          { scaleY: 4 },
+          { scaleY: 2.7 },
         ],
       },
       contentContainer: {
@@ -63,36 +54,59 @@ export default class TransformText extends React.Component {
         margin: 30,
         alignItems: 'center',
       },
+      textStyle: {
+        color: '#feda4a',
+        fontSize: 20,
+        fontFamily: 'pathway-gothic-one',
+        lineHeight: 20,
+        letterSpacing: 6,
+        fontWeight: '600',
+      },
     };
-
+    const { navigation } = this.props;
+    const { show } = this.state;
     return (
       <View style={{ flex: 1, backgroundColor: 'black' }}>
-        <ScrollView
-          style={styles.container}
-          scrollEventThrottle={16}
-          contentContainerStyle={styles.contentContainer}
-          scrollEnabled={false}
-          onScroll={({ nativeEvent }) => {
-            if (this.isCloseToBottom(nativeEvent)) {
-              clearInterval(this.activeInterval);
-            }
-          }}
-          ref={ref => this.scrollView = ref}
-        >
-          <Title style={{ color: '#feda4a', fontSize: 30 }}>
-            {'A NEW HOPE'}
-          </Title>
-          <Paragraph style={{ color: '#feda4a', fontSize: 20, textAlign: 'left' }}>
-            {'Deserunt amet eu pariatur ut adipisicing velit pariatur sit sunt velit eu mollit adipisicing. Lorem ea consectetur qui nostrud in laboris voluptate Lorem id. Reprehenderit magna deserunt proident enim qui aute occaecat quis cillum exercitation. Tempor minim velit consectetur culpa occaecat ex do ipsum fugiat nulla reprehenderit. Non laborum velit officia nostrud labore amet eu sit nostrud officia. Laboris duis aliqua elit id sunt enim non duis culpa reprehenderit nisi nostrud.'}
-          </Paragraph>
-          <Paragraph style={{ color: '#feda4a', fontSize: 20, textAlign: 'left' }}>
-            {'Deserunt amet eu pariatur ut adipisicing velit pariatur sit sunt velit eu mollit adipisicing. Lorem ea consectetur qui nostrud in laboris voluptate Lorem id. Reprehenderit magna deserunt proident enim qui aute occaecat quis cillum exercitation. Tempor minim velit consectetur culpa occaecat ex do ipsum fugiat nulla reprehenderit. Non laborum velit officia nostrud labore amet eu sit nostrud officia. Laboris duis aliqua elit id sunt enim non duis culpa reprehenderit nisi nostrud.'}
-          </Paragraph>
-          <Paragraph style={{ color: '#feda4a', fontSize: 20, textAlign: 'left' }}>
-            {'Deserunt amet eu pariatur ut adipisicing velit pariatur sit sunt velit eu mollit adipisicing. Lorem ea consectetur qui nostrud in laboris voluptate Lorem id. Reprehenderit magna deserunt proident enim qui aute occaecat quis cillum exercitation. Tempor minim velit consectetur culpa occaecat ex do ipsum fugiat nulla reprehenderit. Non laborum velit officia nostrud labore amet eu sit nostrud officia. Laboris duis aliqua elit id sunt enim non duis culpa reprehenderit nisi nostrud.'}
-          </Paragraph>
-        </ScrollView>
+        {
+          show
+            ? (
+              <ScrollView
+                style={styles.container}
+                scrollEventThrottle={16}
+                contentContainerStyle={styles.contentContainer}
+                scrollEnabled={false}
+                onScroll={({ nativeEvent }) => {
+                  if (this.isCloseToBottom(nativeEvent)) {
+                    clearInterval(this.activeInterval);
+                    this.setState({ show: false });
+                    navigation.pop();
+                  }
+                }}
+                ref={(ref) => { this.scrollView = ref; }}
+              >
+                <Title style={styles.textStyle}>
+                  {'A NEW HOPE'}
+                </Title>
+                <Paragraph style={[styles.textStyle, { textAlign: 'left' }]}>
+                  {'Deserunt amet eu pariatur ut adipisicing velit pariatur sit sunt velit eu mollit adipisicing. Lorem ea consectetur qui nostrud in laboris voluptate Lorem id. Reprehenderit magna deserunt proident enim qui aute occaecat quis cillum exercitation. Tempor minim velit consectetur culpa occaecat ex do ipsum fugiat nulla reprehenderit. Non laborum velit officia nostrud labore amet eu sit nostrud officia. Laboris duis aliqua elit id sunt enim non duis culpa reprehenderit nisi nostrud.'}
+                </Paragraph>
+                <Paragraph style={[styles.textStyle, { textAlign: 'left' }]}>
+                  {'Deserunt amet eu pariatur ut adipisicing velit pariatur sit sunt velit eu mollit adipisicing. Lorem ea consectetur qui nostrud in laboris voluptate Lorem id. Reprehenderit magna deserunt proident enim qui aute occaecat quis cillum exercitation. Tempor minim velit consectetur culpa occaecat ex do ipsum fugiat nulla reprehenderit. Non laborum velit officia nostrud labore amet eu sit nostrud officia. Laboris duis aliqua elit id sunt enim non duis culpa reprehenderit nisi nostrud.'}
+                </Paragraph>
+                <Paragraph style={[styles.textStyle, { textAlign: 'left' }]}>
+                  {'Deserunt amet eu pariatur ut adipisicing velit pariatur sit sunt velit eu mollit adipisicing. Lorem ea consectetur qui nostrud in laboris voluptate Lorem id. Reprehenderit magna deserunt proident enim qui aute occaecat quis cillum exercitation. Tempor minim velit consectetur culpa occaecat ex do ipsum fugiat nulla reprehenderit. Non laborum velit officia nostrud labore amet eu sit nostrud officia. Laboris duis aliqua elit id sunt enim non duis culpa reprehenderit nisi nostrud.'}
+                </Paragraph>
+              </ScrollView>
+            )
+            : null
+        }
       </View>
     );
   }
 }
+
+TransformText.propTypes = {
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func.isRequired,
+  }).isRequired,
+};
