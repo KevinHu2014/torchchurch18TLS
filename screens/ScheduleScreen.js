@@ -23,7 +23,8 @@ export default class ScheduleScreen extends React.Component {
 
   componentDidMount() {
     // TODO: 這裡需要一個動態的網址
-    const url = 'https://gist.githubusercontent.com/KevinHu2014/bb2f9e96dba15f6bd26804874f3ff0a9/raw/f67b790edb8d180a28911460cd9fc79a0d328a96/tlsschedule.json';
+    // const url = 'https://gist.githubusercontent.com/KevinHu2014/bb2f9e96dba15f6bd26804874f3ff0a9/raw/f67b790edb8d180a28911460cd9fc79a0d328a96/tlsschedule.json';
+    const url = 'https://s3-ap-southeast-1.amazonaws.com/torch-2018/tlsschedule.json';
     axios.get(url)
       .then((response) => {
         console.log(response.data);
