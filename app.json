@@ -6,7 +6,7 @@
     "privacy": "public",
     "sdkVersion": "29.0.0",
     "platforms": ["ios", "android"],
-    "version": "1.0.1",
+    "version": "1.0.2",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "splash": {
@@ -15,7 +15,8 @@
       "backgroundColor": "#0E2547"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0
+      "enabled": true,
+      "fallbackToCacheTimeout": 30000
     },
     "assetBundlePatterns": [
       "**/*"
