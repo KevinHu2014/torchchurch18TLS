@@ -36,7 +36,7 @@ export default class TransformText extends React.Component {
 
   scrolling() {
     const { start } = this.state;
-    this.scrollView.scrollTo({ x: 0, y: start, animated: true });
+    this.scrollView && this.scrollView.scrollTo({ x: 0, y: start, animated: true });// eslint-disable-line
     this.setState({ start: start + 3 });
   }
 
@@ -103,10 +103,10 @@ export default class TransformText extends React.Component {
         }
         <Snackbar
           visible={visible}
-          duration={30000}
+          duration={100000}
           onDismiss={() => this.setState({ visible: false, show: false })}
           action={{
-            label: 'Undo',
+            label: 'Close',
             onPress: () => {
               navigation.pop();
             },
