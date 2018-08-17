@@ -2,10 +2,12 @@ import React from 'react';
 import {
   Platform, StatusBar, StyleSheet, View,
 } from 'react-native';
+import { Provider as PaperProvider } from 'react-native-paper';
 import {
   AppLoading, Asset, Font, Icon,
 } from 'expo';
 import AppContainer from './AppContainer';
+
 
 const styles = StyleSheet.create({
   container: {
@@ -56,10 +58,12 @@ export default class App extends React.Component {
       );
     }
     return (
-      <View style={styles.container}>
-        {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-        <AppContainer />
-      </View>
+      <PaperProvider>
+        <View style={styles.container}>
+          {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
+          <AppContainer />
+        </View>
+      </PaperProvider>
     );
   }
 }

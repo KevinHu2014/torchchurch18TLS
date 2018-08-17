@@ -4,7 +4,7 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 import { Font } from 'expo';
-import { Paragraph, Title } from 'react-native-paper';
+import { Paragraph, Title, Snackbar } from 'react-native-paper';
 
 export default class TransformText extends React.Component {
   constructor(props) {
@@ -12,14 +12,14 @@ export default class TransformText extends React.Component {
     this.state = {
       start: 0,
       show: false,
-
+      visible: true,
     };
     this.scrolling = this.scrolling.bind(this);
   }
 
   async componentDidMount() {
     await Font.loadAsync({
-      'pathway-gothic-one': require('../assets/fonts/PathwayGothicOne-Regular.ttf'),
+      'pathway-gothic-one': require('../assets/fonts/PathwayGothicOne-Regular.ttf'),// eslint-disable-line
     });
 
     this.setState({ show: true });
@@ -30,8 +30,9 @@ export default class TransformText extends React.Component {
     clearInterval(this.activeInterval);
   }
 
-  isCloseToBottom = ({ layoutMeasurement, contentOffset, contentSize }) => contentOffset.y >= contentSize.height
-  ;
+  isCloseToBottom = ({ layoutMeasurement, contentOffset, contentSize }) => { // eslint-disable-line
+    return contentOffset.y >= contentSize.height;
+  };
 
   scrolling() {
     const { start } = this.state;
@@ -64,7 +65,7 @@ export default class TransformText extends React.Component {
       },
     };
     const { navigation } = this.props;
-    const { show } = this.state;
+    const { show, visible } = this.state;
     return (
       <View style={{ flex: 1, backgroundColor: 'black' }}>
         {
@@ -85,10 +86,10 @@ export default class TransformText extends React.Component {
                 ref={(ref) => { this.scrollView = ref; }}
               >
                 <Title style={styles.textStyle}>
-                  {'A NEW HOPE'}
+                  {'AMAZING'}
                 </Title>
                 <Paragraph style={[styles.textStyle, { textAlign: 'left' }]}>
-                  {'Deserunt amet eu pariatur ut adipisicing velit pariatur sit sunt velit eu mollit adipisicing. Lorem ea consectetur qui nostrud in laboris voluptate Lorem id. Reprehenderit magna deserunt proident enim qui aute occaecat quis cillum exercitation. Tempor minim velit consectetur culpa occaecat ex do ipsum fugiat nulla reprehenderit. Non laborum velit officia nostrud labore amet eu sit nostrud officia. Laboris duis aliqua elit id sunt enim non duis culpa reprehenderit nisi nostrud.'}
+                  {'Thank you for using my App. It really means a lot to me. Hoping you really enjoyed it.'}
                 </Paragraph>
                 <Paragraph style={[styles.textStyle, { textAlign: 'left' }]}>
                   {'Deserunt amet eu pariatur ut adipisicing velit pariatur sit sunt velit eu mollit adipisicing. Lorem ea consectetur qui nostrud in laboris voluptate Lorem id. Reprehenderit magna deserunt proident enim qui aute occaecat quis cillum exercitation. Tempor minim velit consectetur culpa occaecat ex do ipsum fugiat nulla reprehenderit. Non laborum velit officia nostrud labore amet eu sit nostrud officia. Laboris duis aliqua elit id sunt enim non duis culpa reprehenderit nisi nostrud.'}
@@ -100,6 +101,19 @@ export default class TransformText extends React.Component {
             )
             : null
         }
+        <Snackbar
+          visible={visible}
+          duration={30000}
+          onDismiss={() => this.setState({ visible: false, show: false })}
+          action={{
+            label: 'Undo',
+            onPress: () => {
+              navigation.pop();
+            },
+          }}
+        >
+          Congratulations! You Found an Easter Egg!
+        </Snackbar>
       </View>
     );
   }
