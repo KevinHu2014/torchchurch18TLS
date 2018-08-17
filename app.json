@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "tls18torchchurch",
+    "name": "火把領袖高峰會",
     "description": "A very interesting project.",
     "slug": "tls18torchchurch",
     "privacy": "public",
@@ -12,7 +12,7 @@
     "splash": {
       "image": "./assets/images/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#132667"
+      "backgroundColor": "#0E2547"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -27,6 +27,9 @@
     "android": {
       "package": "com.tls18torchchurch",
       "googleServicesFile": "./google-services.json"
+    },
+    "androidStatusBar": {
+      "backgroundColor": "#C0C0C0"
     }
   }
 }
