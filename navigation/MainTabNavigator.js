@@ -30,7 +30,7 @@ const ScheduleStack = createStackNavigator({
     path: '/',
     navigationOptions: () => ({
       headerBackTitle: null,
-      title: 'Schedule',
+      title: '議程',
       headerStyle: {
         height: 60,
         backgroundColor: Colors.header,
@@ -50,7 +50,7 @@ ScheduleStack.navigationOptions = {
     if (focused) {
       return (
         <Text style={styles.activeTabText}>
-          Schedule
+          議程
         </Text>
       );
     }
@@ -79,7 +79,7 @@ const SpeakerStack = createStackNavigator({
     path: '/speaker',
     navigationOptions: () => ({
       headerBackTitle: null,
-      title: 'Speaker',
+      title: '講者',
       headerStyle: {
         height: 60,
         backgroundColor: Colors.header,
@@ -113,7 +113,7 @@ SpeakerStack.navigationOptions = {
     if (focused) {
       return (
         <Text style={styles.activeTabText}>
-          Speaker
+          講者
         </Text>
       );
     }
@@ -135,7 +135,7 @@ SpeakerStack.navigationOptions = {
 const InformationStack = createStackNavigator({
   Information: {
     screen: InformationScreen,
-    path: '/information',
+    path: '/資訊',
     navigationOptions: () => ({
       headerBackTitle: null,
       title: 'Information',
@@ -211,7 +211,7 @@ InformationStack.navigationOptions = {
     if (focused) {
       return (
         <Text style={styles.activeTabText}>
-          Information
+          資訊
         </Text>
       );
     }
@@ -240,7 +240,7 @@ const MoreStack = createStackNavigator({
     path: '/more',
     navigationOptions: () => ({
       headerBackTitle: null,
-      title: 'More',
+      title: '更多',
       headerStyle: {
         height: 60,
         backgroundColor: Colors.header,
@@ -260,7 +260,7 @@ MoreStack.navigationOptions = {
     if (focused) {
       return (
         <Text style={styles.activeTabText}>
-          More
+          更多
         </Text>
       );
     }
