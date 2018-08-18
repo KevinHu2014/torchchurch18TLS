@@ -6,7 +6,6 @@ import {
   Paragraph,
   Card,
   CardContent,
-  Title,
 } from 'react-native-paper';
 
 const styles = StyleSheet.create({
@@ -17,6 +16,16 @@ const styles = StyleSheet.create({
   avatar: {
     height: 40,
     width: 100,
+  },
+  quoteContainer: {
+    alignItems: 'flex-start',
+    height: 60,
+    margin: 15,
+    marginBottom: 0,
+  },
+  quote: {
+    height: 40,
+    width: 50,
   },
   imgContainer: {
     alignItems: 'flex-end',
@@ -37,6 +46,12 @@ export default class Letter extends React.Component {
       <ScrollView style={styles.container}>
         <Card style={{ flexDirection: 'row' }}>
           <CardContent>
+            <View style={styles.quoteContainer}>
+              <Image
+                source={require('../../assets/images/quote.png')} // eslint-disable-line
+                style={styles.quote}
+              />
+            </View>
             <Paragraph
               style={styles.textStyle}
             >
