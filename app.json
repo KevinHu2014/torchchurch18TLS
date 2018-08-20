@@ -8,7 +8,11 @@
     "platforms": ["ios", "android"],
     "version": "1.0.2",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/icon.png", 
+    "notification": {
+      "icon": "./assets/images/notification-icon.png",
+      "color": "#0D3760"
+    },
     "splash": {
       "image": "./assets/images/splash.png",
       "resizeMode": "contain",
