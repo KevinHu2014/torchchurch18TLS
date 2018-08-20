@@ -26,7 +26,7 @@
       "**/*"
     ],
     "ios": {
-      "bundleIdentifier": "com.tls18torchchurch",
+      "bundleIdentifier": "org.torch.2019",
       "supportsTablet": true
     },
     "android": {
