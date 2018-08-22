@@ -50,6 +50,9 @@ export default class InformationScreen extends React.Component {
           <ListItem
             title="場地資訊"
             icon="map"
+            onPress={() => {
+              navigation.navigate('Map');
+            }}
           />
           <Divider />
           <ListItem
