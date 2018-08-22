@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {
-  ScrollView, View,
+  ScrollView, View, Image,
 } from 'react-native';
 import PropTypes from 'prop-types';
 import { Font } from 'expo';
@@ -47,7 +47,6 @@ export default class TransformText extends React.Component {
         transform: [
           { perspective: 300 },
           { rotateX: '30deg' },
-          { scaleY: 2.7 },
         ],
       },
       contentContainer: {
@@ -68,6 +67,10 @@ export default class TransformText extends React.Component {
     const { show, visible } = this.state;
     return (
       <View style={{ flex: 1, backgroundColor: 'black' }}>
+        <Image
+          style={{ position: 'absolute', width: '100%', height: '30%' }}
+          source={require('../assets/images/transform.png')} // eslint-disable-line
+        />
         {
           show
             ? (
