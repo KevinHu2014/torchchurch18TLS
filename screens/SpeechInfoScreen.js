@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  ScrollView, StyleSheet, Image, View,
+  ScrollView, StyleSheet, Image,
 } from 'react-native';
 import {
   Card,
@@ -10,6 +10,7 @@ import {
   Paragraph,
   ListItem,
 } from 'react-native-paper';
+import Colors from '../constants/Colors';
 
 const styles = StyleSheet.create({
   container: {
@@ -36,7 +37,7 @@ const styles = StyleSheet.create({
   textStyle: {
     margin: 15,
     // fontSize: 17,
-    color: '#A9A9A9',
+    color: Colors.lightText,
     lineHeight: 25,
   },
 });

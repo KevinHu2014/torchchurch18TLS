@@ -8,6 +8,7 @@ import {
   CardContent,
   Title,
 } from 'react-native-paper';
+import Colors from '../../constants/Colors';
 
 const styles = StyleSheet.create({
   container: {
@@ -27,7 +28,7 @@ const styles = StyleSheet.create({
   textStyle: {
     margin: 15,
     fontSize: 17,
-    color: '#C0C0C0',
+    color: Colors.lightText,
     lineHeight: 30,
   },
 });

@@ -7,6 +7,7 @@ export default {
   tabBar: '#0D3760',
   header: '#fff',
   headerText: '#CEA34E',
+  lightText: '#A9A9A9',
   errorBackground: 'red',
   errorText: '#fff',
   warningBackground: '#EAEB5E',
