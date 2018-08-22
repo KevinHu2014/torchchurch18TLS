@@ -11,6 +11,7 @@ import SpeakerInfoScreen from '../screens/SpeakerInfoScreen';
 import QAScreen from '../screens/information/QAScreen';
 import PreNotificationScreen from '../screens/information/PreNotificationScreen';
 import LetterScreen from '../screens/information/LetterScreen';
+import LyricsScreen from '../screens/information/LyricsScreen';
 import MapScreen from '../screens/information/MapScreen';
 import FeedBackScreen from '../components/TransformText';
 import Colors from '../constants/Colors';
@@ -187,6 +188,22 @@ const InformationStack = createStackNavigator({
     path: '/letter',
     navigationOptions: () => ({
       title: '牧師的話',
+      headerTintColor: Colors.header,
+      headerStyle: {
+        height: 60,
+        backgroundColor: Colors.headerText,
+      },
+      headerTitleStyle: {
+        color: Colors.header,
+        fontSize: 23,
+      },
+    }),
+  },
+  Lyrics: {
+    screen: LyricsScreen,
+    path: '/lyrics',
+    navigationOptions: () => ({
+      title: '領袖高峰會主題曲',
       headerTintColor: Colors.header,
       headerStyle: {
         height: 60,
