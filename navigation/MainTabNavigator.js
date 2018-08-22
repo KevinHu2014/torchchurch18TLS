@@ -137,10 +137,10 @@ SpeakerStack.navigationOptions = {
 const InformationStack = createStackNavigator({
   Information: {
     screen: InformationScreen,
-    path: '/資訊',
+    path: '/information',
     navigationOptions: () => ({
       headerBackTitle: null,
-      title: 'Information',
+      title: '資訊',
       headerStyle: {
         height: 60,
         backgroundColor: Colors.header,
