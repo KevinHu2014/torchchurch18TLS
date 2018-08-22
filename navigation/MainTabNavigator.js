@@ -7,6 +7,7 @@ import ScheduleScreen from '../screens/ScheduleScreen';
 import SpeakerScreen from '../screens/SpeakerScreen';
 import InformationScreen from '../screens/InformationScreen';
 import MoreScreen from '../screens/MoreScreen';
+import SpeechInfoScreen from '../screens/SpeechInfoScreen';
 import SpeakerInfoScreen from '../screens/SpeakerInfoScreen';
 import QAScreen from '../screens/information/QAScreen';
 import PreNotificationScreen from '../screens/information/PreNotificationScreen';
@@ -41,6 +42,22 @@ const ScheduleStack = createStackNavigator({
       },
       headerTitleStyle: {
         color: Colors.headerText,
+        fontSize: 23,
+      },
+    }),
+  },
+  SpeechInfo: {
+    screen: SpeechInfoScreen,
+    path: '/speechinfo/:name',
+    navigationOptions: ({ navigation }) => ({
+      title: `${navigation.state.params.name}`,
+      headerTintColor: Colors.header,
+      headerStyle: {
+        height: 60,
+        backgroundColor: Colors.headerText,
+      },
+      headerTitleStyle: {
+        color: Colors.header,
         fontSize: 23,
       },
     }),

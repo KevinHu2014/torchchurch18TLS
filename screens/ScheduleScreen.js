@@ -3,6 +3,7 @@ import {
   StyleSheet, View, ScrollView,
   Platform,
 } from 'react-native';
+import PropTypes from 'prop-types';
 import { ListSection, ListItem } from 'react-native-paper';
 import axios from 'axios';
 import AnimatedTopTabs from '../components/AnimatedTopTabs';
@@ -22,8 +23,6 @@ export default class ScheduleScreen extends React.Component {
   }
 
   componentDidMount() {
-    // TODO: 這裡需要一個動態的網址
-    // const url = 'https://gist.githubusercontent.com/KevinHu2014/bb2f9e96dba15f6bd26804874f3ff0a9/raw/f67b790edb8d180a28911460cd9fc79a0d328a96/tlsschedule.json';
     const url = 'https://s3-ap-southeast-1.amazonaws.com/torch-2018/tlsschedule.json';
     axios.get(url)
       .then((response) => {
@@ -37,17 +36,22 @@ export default class ScheduleScreen extends React.Component {
 
   renderContent() {
     const { currentTab, Data } = this.state;
+    const { navigation } = this.props;
     if (!Data) {
       return true;
     }
     return Data[`Day${currentTab + 1}`].map((events) => {
-      const time = new Date(events.start);
-      const diff = (new Date(events.end) - new Date(events.start)) / 1000;
+      // TODO: Json 要多代一個講者的照片參數 img
+      const {
+        name, start, end, speaker, topic, outline,
+      } = events;
+      const time = new Date(start);
+      const diff = (new Date(end) - new Date(start)) / 1000;
       const Hour = diff / (60 * 60);
       const Min = (diff % (60 * 60)) / 60;
       const duration = `${(Hour >= 1) ? Math.floor(Hour) : ''}${(Hour >= 1) ? ' HOUR ' : ''}${(Min >= 1) ? Min : ''}${(Min >= 1) ? ' MIN' : ''}`;
       return (
-        <View key={events.start}>
+        <View key={start}>
           <ListSection
             title={
               Platform.OS === 'ios'
@@ -58,8 +62,16 @@ export default class ScheduleScreen extends React.Component {
           >
             <ListItem
               style={{ backgroundColor: '#fff' }}
-              title={events.name}
-              description={`${events.speaker ? events.speaker : ''}${events.speaker ? '- ' : ''}${duration}`}
+              title={name}
+              description={`${speaker || ''}${speaker ? '- ' : ''}${duration}`}
+              onPress={() => {
+                if (speaker) {
+                  navigation.navigate('SpeechInfo',
+                    {
+                      name, speaker, topic, outline, duration,
+                    });
+                }
+              }}
             />
           </ListSection>
         </View>
@@ -84,3 +96,9 @@ export default class ScheduleScreen extends React.Component {
     );
   }
 }
+
+ScheduleScreen.propTypes = {
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func.isRequired,
+  }).isRequired,
+};
