@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "火把領袖高峰會",
+    "name": "18火把特會",
     "description": "A very interesting project.",
     "slug": "tls18torchchurch",
     "privacy": "public",
@@ -30,7 +30,7 @@
       "supportsTablet": true
     },
     "android": {
-      "package": "com.tls18torchchurch",
+      "package": "com.torchchurch18tls",
       "googleServicesFile": "./google-services.json"
     },
     "androidStatusBar": {

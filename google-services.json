@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:979370412353:android:4c0a39f698db7696",
+        "mobilesdk_app_id": "1:979370412353:android:00bb9d237447447d",
         "android_client_info": {
-          "package_name": "com.tls18torchchurch"
+          "package_name": "com.torchchurch18tls"
         }
       },
       "oauth_client": [
