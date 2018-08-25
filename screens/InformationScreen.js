@@ -12,13 +12,16 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   topStyle: {
-    height: 100,
+    height: 80,
     backgroundColor: Colors.tabBar,
     color: Colors.header,
     borderColor: Colors.header,
     borderWidth: 2,
     margin: 5,
-    padding: 10,
+    marginTop: 6,
+    marginBottom: 6,
+    padding: 5,
+    fontSize: 13,
   },
 });
 export default class InformationScreen extends React.Component {
@@ -26,7 +29,7 @@ export default class InformationScreen extends React.Component {
     const { navigation } = this.props;
     return (
       <ScrollView style={styles.container}>
-        <View style={{ backgroundColor: Colors.tabBar }}>
+        <View style={{ backgroundColor: Colors.tabBar, justifyContent: 'center' }}>
           <Paragraph style={styles.topStyle}>
             {'以賽亞書54:2\n要擴張你帳幕之地，張大你居所的幔子，不要限止；\n要放長你的繩子，堅固你的橛子。 '}
           </Paragraph>
