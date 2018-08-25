@@ -58,7 +58,7 @@ export default class Letter extends React.Component {
             >
               {'時代在改變，我們都知道，\n只有腳不知道，所以沒跟到;\n時代在改變，我們都知道，\n只有心不知道，所以沒想到;\n時代在改變，我們都知道，\n只有手不知道，所以沒抓到;\n時代在改變，世界都知道，\n只有信徒不知道，所以保持現狀;\n時代在改變，所有領袖都知道，\n只有門徒不知道，所以絲毫不在意。\n時代的門徒，在聖靈的大能與真理中，\n獨領風騷、帶動改變 !'}
             </Paragraph>
-            <Paragraph style={[styles.textStyle, { fontSize: 15 }]}>
+            <Paragraph style={[styles.textStyle, { fontSize: 15, textAlign: 'right' }]}>
               {'\n火把行道會主任牧師'}
             </Paragraph>
             <View style={styles.imgContainer}>
