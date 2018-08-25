@@ -9,6 +9,7 @@ import {
   Title,
   Paragraph,
 } from 'react-native-paper';
+import Colors from '../constants/Colors';
 
 const styles = StyleSheet.create({
   container: {
@@ -17,7 +18,7 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     height: 195,
-    backgroundColor: 'grey',
+    backgroundColor: Colors.lightGray,
     overflow: 'hidden',
   },
   image: {
