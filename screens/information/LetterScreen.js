@@ -49,7 +49,7 @@ export default class Letter extends React.Component {
           <CardContent>
             <View style={styles.quoteContainer}>
               <Image
-                source={require('../../assets/images/quote.png')} // eslint-disable-line
+                source={require('../../assets/images/quoteDown.png')} // eslint-disable-line
                 style={styles.quote}
               />
             </View>
