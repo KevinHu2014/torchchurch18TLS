@@ -1,6 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
-import { GiftedChat } from 'react-native-gifted-chat';
+import { GiftedChat, Bubble } from 'react-native-gifted-chat';
+import Colors from '../../constants/Colors';
 
 // 楊牧師的照片
 const img = 'https://scontent.ftpe8-1.fna.fbcdn.net/v/t1.0-9/10288729_807840705903164_3256156870797098814_n.jpg?_nc_cat=0&oh=d3aaa4f5e48ef1831829ba296de36dd9&oe=5BF5A42E';
@@ -147,7 +148,23 @@ export default class QA extends React.Component {
     const { messages } = this.state;
     return (
       <GiftedChat
+        renderBubble={props => (
+          <Bubble
+            {...props}
+            wrapperStyle={{
+              right: {
+                backgroundColor: Colors.tabIconDefault,
+              },
+            }}
+            textStyle={{
+              left: {
+                color: Colors.tabBar,
+              },
+            }}
+          />
+        )}
         messages={messages}
+        minInputToolbarHeight={0}
         renderInputToolbar={() => <View />}
         user={{
           _id: 1,
