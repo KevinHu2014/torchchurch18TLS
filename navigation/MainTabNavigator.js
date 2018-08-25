@@ -172,7 +172,7 @@ const InformationStack = createStackNavigator({
     screen: QAScreen,
     path: '/qa',
     navigationOptions: () => ({
-      title: '注意事項Q&A',
+      title: '注意事項 Q&A',
       headerTintColor: Colors.header,
       headerStyle: {
         height: 60,
@@ -188,7 +188,7 @@ const InformationStack = createStackNavigator({
     screen: PreNotificationScreen,
     path: '/prenotification',
     navigationOptions: () => ({
-      title: '行前通知',
+      title: '與會前通知',
       headerTintColor: Colors.header,
       headerStyle: {
         height: 60,

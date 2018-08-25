@@ -19,22 +19,6 @@ export default class InformationScreen extends React.Component {
       <ScrollView style={styles.container}>
         <ListSection title="活動資訊">
           <ListItem
-            title="與會前通知"
-            icon="notifications"
-            onPress={() => {
-              navigation.navigate('PreNotification');
-            }}
-          />
-          <Divider />
-          <ListItem
-            title="Q&A"
-            icon="question-answer"
-            onPress={() => {
-              navigation.navigate('QA');
-            }}
-          />
-          <Divider />
-          <ListItem
             title="牧師的話"
             icon="format-quote"
             onPress={() => {
@@ -43,10 +27,18 @@ export default class InformationScreen extends React.Component {
           />
           <Divider />
           <ListItem
-            title="擴張- 主題曲歌詞"
+            title="領袖高峰會主題曲"
             icon="queue-music"
             onPress={() => {
               navigation.navigate('Lyrics');
+            }}
+          />
+          <Divider />
+          <ListItem
+            title="與會前通知"
+            icon="notifications"
+            onPress={() => {
+              navigation.navigate('PreNotification');
             }}
           />
           <Divider />
@@ -55,6 +47,14 @@ export default class InformationScreen extends React.Component {
             icon="map"
             onPress={() => {
               navigation.navigate('Map');
+            }}
+          />
+          <Divider />
+          <ListItem
+            title="注意事項 Q&A"
+            icon="question-answer"
+            onPress={() => {
+              navigation.navigate('QA');
             }}
           />
           <Divider />
