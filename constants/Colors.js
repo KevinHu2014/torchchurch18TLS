@@ -16,4 +16,5 @@ export default {
   noticeText: '#fff',
   bubble: '#CEB593',
   darkGray: '#717071',
+  lightGray: '#C0C0C0',
 };
