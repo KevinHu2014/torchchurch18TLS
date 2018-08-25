@@ -27,11 +27,13 @@
     ],
     "ios": {
       "bundleIdentifier": "com.tls18torchchurch",
-      "supportsTablet": true
+      "supportsTablet": true,
+      "icon": "./assets/images/iconIos.png"
     },
     "android": {
       "package": "com.torchchurch18tls",
-      "googleServicesFile": "./google-services.json"
+      "googleServicesFile": "./google-services.json",
+      "icon": "./assets/images/icon.png"
     },
     "androidStatusBar": {
       "backgroundColor": "#C0C0C0"
