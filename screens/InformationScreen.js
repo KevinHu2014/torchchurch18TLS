@@ -1,15 +1,24 @@
 import React from 'react';
-import { ScrollView, StyleSheet, Platform } from 'react-native';
+import { ScrollView, StyleSheet, Platform, View } from 'react-native';
 import { WebBrowser } from 'expo';
-import { ListItem, ListSection, Divider } from 'react-native-paper';
+import { ListItem, ListSection, Divider, Paragraph } from 'react-native-paper';
 import PropTypes from 'prop-types';
+import Colors from '../constants/Colors';
 
 let times = 0;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 15,
     backgroundColor: '#fff',
+  },
+  topStyle: {
+    height: 100,
+    backgroundColor: Colors.tabBar,
+    color: Colors.header,
+    borderColor: Colors.header,
+    borderWidth: 2,
+    margin: 5,
+    padding: 10,
   },
 });
 export default class InformationScreen extends React.Component {
@@ -17,6 +26,11 @@ export default class InformationScreen extends React.Component {
     const { navigation } = this.props;
     return (
       <ScrollView style={styles.container}>
+        <View style={{ backgroundColor: Colors.tabBar }}>
+          <Paragraph style={styles.topStyle}>
+            {'以賽亞書54:2\n要擴張你帳幕之地，張大你居所的幔子，不要限止；\n要放長你的繩子，堅固你的橛子。 '}
+          </Paragraph>
+        </View>
         <ListSection title="活動資訊">
           <ListItem
             title="牧師的話"
