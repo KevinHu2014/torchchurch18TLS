@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import { GiftedChat, Bubble } from 'react-native-gifted-chat';
 import Colors from '../../constants/Colors';
 
-const img = 'https://firebasestorage.googleapis.com/v0/b/tls2018-6a8fb.appspot.com/o/Speaker01.png?alt=media&token=e103ea6a-5043-4744-ab1a-c30d89e98804';
+const img = 'https://firebasestorage.googleapis.com/v0/b/tls2018-6a8fb.appspot.com/o/Speaker-05.png?alt=media&token=131fadd8-36ba-4e67-84ba-a2375b81f316';
 
 export default class QA extends React.Component {
   state = {
@@ -162,6 +162,11 @@ export default class QA extends React.Component {
             }}
           />
         )}
+        listViewProps={{
+          style: {
+            backgroundColor: 'white',
+          },
+        }}
         messages={messages}
         minInputToolbarHeight={0}
         renderInputToolbar={() => <View />}
