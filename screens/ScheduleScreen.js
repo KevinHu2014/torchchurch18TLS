@@ -65,11 +65,24 @@ export default class ScheduleScreen extends React.Component {
               title={name}
               description={`${speaker || ''}${speaker ? '- ' : ''}${duration}`}
               onPress={() => {
-                if (speaker) {
-                  navigation.navigate('SpeechInfo',
-                    {
-                      name, speaker, topic, outline, duration,
-                    });
+                let SpeakerImg = '';
+                let SpeakerJob = '';
+                let SpeakerDescription = '';
+                const SpeakerMax = 3;
+                let i = 0;
+
+                for (i = 0; i < Data.Speaker.length; i++) {
+                  if (Data.Speaker[i].name === speaker) {
+                    SpeakerImg = Data.Speaker[i].img;
+                    SpeakerJob = Data.Speaker[i].job;
+                    SpeakerDescription = Data.Speaker[i].description;
+                  }
+                  if (speaker && SpeakerMax === 3) {
+                    navigation.navigate('SpeechInfo',
+                      {
+                        name, speaker, topic, outline, duration, SpeakerImg, SpeakerJob, SpeakerDescription,
+                      });
+                  }
                 }
               }}
             />
