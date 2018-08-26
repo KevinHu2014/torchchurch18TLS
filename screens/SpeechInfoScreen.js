@@ -65,7 +65,7 @@ export default class SpeechInfo extends React.Component {
                 />
               )}
             />
-            <Title style={{ color: '#0D3760', marginLeft: 15 }}>
+            <Title style={{ color: Colors.blue, marginLeft: 15 }}>
               {topic}
             </Title>
             <Paragraph style={styles.textStyle}>

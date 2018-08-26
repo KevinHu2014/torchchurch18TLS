@@ -45,7 +45,7 @@ export default class Lyrics extends React.Component {
                 style={styles.quote}
               />
             </View>
-            <Title style={{ color: '#0D3760', margin: 15 }}>
+            <Title style={{ color: Colors.blue, margin: 15 }}>
               永恆閃耀
             </Title>
             <Paragraph
