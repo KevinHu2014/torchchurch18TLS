@@ -51,6 +51,10 @@ export default class SpeechInfo extends React.Component {
     const topic = navigation.getParam('topic', '此頁面出了點問題 X X');
     const outline = navigation.getParam('outline', '此頁面出了點問題 X X');
     const duration = navigation.getParam('duration', '404');
+
+    const SpeakerImg = navigation.getParam('SpeakerImg', 'https://portal.torchchurch.com/Activity/upload/2018062016130100237353622532273703665195.jpg');
+    const SpeakerJob = navigation.getParam('SpeakerJob', '404');
+    const SpeakerDescription = navigation.getParam('SpeakerDescription', '此頁面出了點問題 X X');
     return (
       <ScrollView style={styles.container}>
         <Card style={{ flexDirection: 'row' }}>
@@ -64,6 +68,12 @@ export default class SpeechInfo extends React.Component {
                   style={styles.avatar}
                 />
               )}
+              onPress={() => {
+                navigation.navigate('SpeakerInfo',
+                  {
+                    name: speaker, img: SpeakerImg, job: SpeakerJob, description: SpeakerDescription,
+                  });
+              }}
             />
             <Title style={{ color: '#0D3760', marginLeft: 15 }}>
               {topic}
