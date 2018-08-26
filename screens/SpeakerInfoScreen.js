@@ -48,10 +48,10 @@ export default class SpeakerInfo extends React.Component {
             <Image style={styles.image} source={{ uri: img }} />
           </View>
           <CardContent>
-            <Title>
+            <Title style={{ color: Colors.blue }}>
               {job}
             </Title>
-            <Paragraph>
+            <Paragraph style={{ color: Colors.darkGray }}>
               {description}
             </Paragraph>
           </CardContent>
