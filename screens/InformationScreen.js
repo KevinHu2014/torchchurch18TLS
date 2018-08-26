@@ -96,7 +96,7 @@ export default class InformationScreen extends React.Component {
             title="參與者回饋"
             icon="feedback"
             onPress={() => {
-              WebBrowser.openBrowserAsync('https://goo.gl/forms/GBPu3QaQa0DKIqW73');
+              WebBrowser.openBrowserAsync('https://goo.gl/forms/fbybJGogQTSP6aQN2');
             }}
           />
           <Divider />
