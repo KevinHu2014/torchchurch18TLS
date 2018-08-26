@@ -46,7 +46,7 @@ export default class SpeechInfo extends React.Component {
   render() {
     const { navigation } = this.props;
 
-    const img = navigation.getParam('img', 'https://cdn.iconscout.com/icon/free/png-256/avatar-369-456321.png');
+    const img = navigation.getParam('img', 'https://firebasestorage.googleapis.com/v0/b/tls2018-6a8fb.appspot.com/o/Speaker-05.png?alt=media&token=131fadd8-36ba-4e67-84ba-a2375b81f316');
     const speaker = navigation.getParam('speaker', '404');
     const topic = navigation.getParam('topic', '此頁面出了點問題 X X');
     const outline = navigation.getParam('outline', '此頁面出了點問題 X X');
