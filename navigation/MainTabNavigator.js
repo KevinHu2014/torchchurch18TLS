@@ -12,7 +12,8 @@ import SpeakerInfoScreen from '../screens/SpeakerInfoScreen';
 import QAScreen from '../screens/information/QAScreen';
 import PreNotificationScreen from '../screens/information/PreNotificationScreen';
 import LetterScreen from '../screens/information/LetterScreen';
-import LyricsScreen from '../screens/information/LyricsScreen';
+// import LyricsScreen from '../screens/information/LyricsScreen';
+import MusicPlayer from '../screens/information/MusicPlayer';
 import MapScreen from '../screens/information/MapScreen';
 import FeedBackScreen from '../components/TransformText';
 import Colors from '../constants/Colors';
@@ -217,7 +218,7 @@ const InformationStack = createStackNavigator({
     }),
   },
   Lyrics: {
-    screen: LyricsScreen,
+    screen: MusicPlayer,
     path: '/lyrics',
     navigationOptions: () => ({
       title: '領袖高峰會主題曲',
