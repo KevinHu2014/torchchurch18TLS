@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  ScrollView, StyleSheet, Image, View,
+  ScrollView, StyleSheet,
 } from 'react-native';
 import {
   Card,
   CardContent,
+  CardCover,
   Title,
   Paragraph,
 } from 'react-native-paper';
@@ -40,13 +41,13 @@ export default class SpeakerInfo extends React.Component {
     return (
       <ScrollView style={styles.container}>
         <Card style={{ flexDirection: 'row' }}>
-          {/* <CardCover
+          <CardCover
             resizeMode="contain"
-            source={{ uri: 'http://www.torchchurch.com/images/img-pastor1.jpg' }}
-          /> */}
-          <View style={styles.imageContainer}>
+            source={{ uri: img }}
+          />
+          {/* <View style={styles.imageContainer}>
             <Image style={styles.image} source={{ uri: img }} />
-          </View>
+          </View> */}
           <CardContent>
             <Title style={{ color: Colors.blue }}>
               {job}
