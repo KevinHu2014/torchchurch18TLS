@@ -3,8 +3,7 @@ import { View } from 'react-native';
 import { GiftedChat, Bubble } from 'react-native-gifted-chat';
 import Colors from '../../constants/Colors';
 
-// 楊牧師的照片
-const img = 'https://scontent.ftpe8-1.fna.fbcdn.net/v/t1.0-9/10288729_807840705903164_3256156870797098814_n.jpg?_nc_cat=0&oh=d3aaa4f5e48ef1831829ba296de36dd9&oe=5BF5A42E';
+const img = 'https://firebasestorage.googleapis.com/v0/b/tls2018-6a8fb.appspot.com/o/Speaker01.png?alt=media&token=e103ea6a-5043-4744-ab1a-c30d89e98804';
 
 export default class QA extends React.Component {
   state = {
@@ -153,12 +152,12 @@ export default class QA extends React.Component {
             {...props}
             wrapperStyle={{
               right: {
-                backgroundColor: Colors.tabIconDefault,
+                backgroundColor: Colors.bubble,
               },
             }}
             textStyle={{
               left: {
-                color: Colors.tabBar,
+                color: Colors.darkGray,
               },
             }}
           />
