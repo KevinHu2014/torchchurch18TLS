@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import AnimatedTopTabs from '../components/AnimatedTopTabs';
 import LinkList from '../components/LinkList';
-
+import Culture from '../components/Culture';
 
 const styles = StyleSheet.create({
   container: {
@@ -21,6 +21,11 @@ export default class MoreScreen extends React.Component {
 
   renderContent() {
     const { currentTab } = this.state;
+    if (currentTab === 0) {
+      return (
+        <Culture />
+      );
+    }
     if (currentTab === 1) {
       return (
         <LinkList />
@@ -36,7 +41,7 @@ export default class MoreScreen extends React.Component {
           height={30}
           activeTabIndicatorColor="#CEA34E"
           containerStyle={{ backgroundColor: '#fff' }}
-          tabTitles={['About', 'Links', 'Notifications']}
+          tabTitles={['意象&文化', '火把社群', '最新消息']}
           onChangeTab={this.handleTabChange}
         />
         {this.renderContent()}
