@@ -8,11 +8,11 @@ import {
   Title,
   Paragraph,
 } from 'react-native-paper';
+import Colors from '../constants/Colors';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 15,
     backgroundColor: '#fff',
   },
   paper: {
@@ -26,7 +26,6 @@ const styles = StyleSheet.create({
 });
 
 export default class SpeakerScreen extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -62,10 +61,10 @@ export default class SpeakerScreen extends React.Component {
           }}
         >
           <CardContent>
-            <Title>
+            <Title style={{ color: Colors.blue }}>
               {name}
             </Title>
-            <Paragraph>
+            <Paragraph style={{ color: Colors.darkGray }}>
               {job}
             </Paragraph>
           </CardContent>

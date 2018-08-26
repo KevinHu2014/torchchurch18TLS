@@ -17,4 +17,6 @@ export default {
   bubble: '#CEB593',
   darkGray: '#717071',
   lightGray: '#C0C0C0',
+  gray: '#A9A9A9',
+  blue: '#0D3760',
 };
