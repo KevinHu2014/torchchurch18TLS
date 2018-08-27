@@ -5,11 +5,13 @@ import {
   Platform,
   Image,
   Dimensions,
+  Text,
 } from 'react-native';
 import { WebBrowser } from 'expo';
 import { ListItem, ListSection, Divider } from 'react-native-paper';
 import PropTypes from 'prop-types';
 import Colors from '../constants/Colors';
+
 const { width } = Dimensions.get('window');
 
 let times = 0;

@@ -167,6 +167,7 @@ const InformationStack = createStackNavigator({
         color: Colors.headerText,
         fontSize: 23,
       },
+      headerLeft: null,
     }),
   },
   QA: {

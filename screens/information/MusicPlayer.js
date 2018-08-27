@@ -2,6 +2,7 @@ import React from 'react';
 import {
   StyleSheet, Image, View, Dimensions, Text,
 } from 'react-native';
+import { HeaderBackButton } from 'react-navigation';
 import { Title } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Audio } from 'expo';
@@ -30,10 +31,22 @@ const styles = StyleSheet.create({
 });
 
 export default class Music extends React.Component {
-  state = { play: false, showLyrics: false }
+  static navigationOptions = ({ navigation }) => ({
+    headerLeft: (
+      <HeaderBackButton
+        tintColor="#fff"
+        onPress={() => navigation.push('Information')}
+      />
+    ),
+  });
+
+  constructor(props) {
+    super(props);
+    this.playbackObject = new Audio.Sound();
+    this.state = { play: false, showLyrics: false };
+  }
 
   componentDidMount() {
-    this.playbackObject = new Audio.Sound();
     Audio.setAudioModeAsync({
       allowsRecordingIOS: false,
       interruptionModeIOS: Audio.INTERRUPTION_MODE_IOS_DO_NOT_MIX,
