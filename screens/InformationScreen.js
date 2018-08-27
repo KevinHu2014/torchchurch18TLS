@@ -3,13 +3,14 @@ import {
   ScrollView,
   StyleSheet,
   Platform,
-  View,
-  Text,
+  Image,
+  Dimensions,
 } from 'react-native';
-import { WebBrowser, LinearGradient } from 'expo';
+import { WebBrowser } from 'expo';
 import { ListItem, ListSection, Divider } from 'react-native-paper';
 import PropTypes from 'prop-types';
 import Colors from '../constants/Colors';
+const { width } = Dimensions.get('window');
 
 let times = 0;
 const styles = StyleSheet.create({
@@ -17,17 +18,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
   },
-  topStyle: {
-    backgroundColor: Colors.header,
-    color: Colors.headerText,
-    margin: 3,
-    fontSize: 13,
-    lineHeight: 17,
-    flex: 1,
-    padding: 10,
-    paddingLeft: 20,
-    paddingRight: 20,
-    fontWeight: '200',
+  banner: {
+    height: 100,
+    width,
+    resizeMode: 'contain',
   },
 });
 export default class InformationScreen extends React.Component {
@@ -35,22 +29,10 @@ export default class InformationScreen extends React.Component {
     const { navigation } = this.props;
     return (
       <ScrollView style={styles.container}>
-        <View style={{ backgroundColor: Colors.header, justifyContent: 'center' }}>
-          <LinearGradient
-            colors={['#E0C98D', '#AC8331', '#C2B171']}
-            start={{ x: 0, y: 1 }}
-            end={{ x: 1, y: 1 }}
-            locations={[0, 0.7, 0.9]}
-            style={{
-              height: 100,
-              margin: 3,
-            }}
-          >
-            <Text style={styles.topStyle}>
-              {'以賽亞書54:2\n\n要擴張你帳幕之地，張大你居所的幔子，不要限止；\n要放長你的繩子，堅固你的橛子。 '}
-            </Text>
-          </LinearGradient>
-        </View>
+        <Image
+          source={require('../assets/images/banner.png')} // eslint-disable-line
+          style={styles.banner}
+        />
         <ListSection title="活動資訊">
           <ListItem
             title="牧師的話"
