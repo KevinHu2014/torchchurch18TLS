@@ -3,12 +3,9 @@ import { Constants, Permissions, Notifications } from 'expo';
 import * as firebase from 'firebase';
 import firebaseConfig from '../firebaseConfig';
 
-// Example server, implemented in Rails: https://git.io/vKHKv
-const PUSH_ENDPOINT = 'https://expo-push-server.herokuapp.com/tokens';
 
 export default (async function registerForPushNotificationsAsync() {
   let userUID = null;
-  console.log('heeellllllllllo world');
   // firebase init
   await firebase.initializeApp(firebaseConfig);
   // firebase signInAnonymously
@@ -59,17 +56,6 @@ export default (async function registerForPushNotificationsAsync() {
   firebase.database().ref(`users/${userUID}`).set({
     notification: token,
   });
-  // POST the token to our backend so we can use it to send pushes from there
-  return fetch(PUSH_ENDPOINT, {
-    method: 'POST',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      token: {
-        value: token,
-      },
-    }),
-  });
+
+  return true;
 });
