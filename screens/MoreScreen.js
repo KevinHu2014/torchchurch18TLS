@@ -41,7 +41,7 @@ export default class MoreScreen extends React.Component {
           height={30}
           activeTabIndicatorColor="#CEA34E"
           containerStyle={{ backgroundColor: '#fff' }}
-          tabTitles={['意象&文化', '火把社群', '最新消息']}
+          tabTitles={['異象&文化', '火把社群', '最新消息']}
           onChangeTab={this.handleTabChange}
         />
         {this.renderContent()}
