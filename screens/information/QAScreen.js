@@ -69,7 +69,7 @@ export default class QA extends React.Component {
         },
         {
           _id: 6,
-          text: '我可以在特會中拍照、錄影、錄音嗎？',
+          text: '我可以在特會中拍照、錄影、錄音嗎',
           createdAt: new Date(),
           user: {
             _id: 1,
@@ -78,7 +78,7 @@ export default class QA extends React.Component {
         },
         {
           _id: 5,
-          text: '可以。請依照招待人員指示，在合適的時間入場。',
+          text: '特會有清場彩排時間，請於每次入場重新入座。',
           createdAt: new Date(),
           user: {
             _id: 2,
@@ -111,7 +111,7 @@ export default class QA extends React.Component {
         },
         {
           _id: 2,
-          text: '特會開始後若中途有事離開，可以再參加嗎？',
+          text: '高峰會開始後若中途有事離開，可以再參加嗎？',
           createdAt: new Date(),
           user: {
             _id: 1,
@@ -120,7 +120,7 @@ export default class QA extends React.Component {
         },
         {
           _id: 1,
-          text: '請至高峰會櫃臺確認報名資訊，以工本費50元購買新的特會物資包。',
+          text: '別擔心，請至高峰會櫃臺確認報名資訊，再以工本費50元購買新的物資包。',
           createdAt: new Date(),
           user: {
             _id: 2,
@@ -132,7 +132,7 @@ export default class QA extends React.Component {
         },
         {
           _id: 0,
-          text: '如果不小心弄丟高峰會物資包，怎麼辦？',
+          text: '我不小心弄丟高峰會物資包，可以怎麼處理呢？',
           createdAt: new Date(),
           user: {
             _id: 1,
