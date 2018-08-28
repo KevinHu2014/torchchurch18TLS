@@ -23,7 +23,7 @@ export default class LinkList extends React.Component {
   };
 
   handlePressYoutube = () => {
-    WebBrowser.openBrowserAsync('https://www.youtube.com/channel/UCePMQ8oujFbIetPRQBSekjQ');
+    WebBrowser.openBrowserAsync('https://www.youtube.com/playlist?list=PLOj8BXSwCqBj6710XTKKXNDwSfvKI5yec');
   };
 
   handlePressApp = () => {
