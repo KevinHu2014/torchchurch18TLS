@@ -33,6 +33,7 @@
     },
     "android": {
       "package": "com.torchchurch18tls",
+      "versionCode": 2,
       "googleServicesFile": "./google-services.json",
       "icon": "./assets/images/icon.png"
     },
