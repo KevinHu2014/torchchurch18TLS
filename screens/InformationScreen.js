@@ -45,7 +45,7 @@ export default class InformationScreen extends React.Component {
           />
           <Divider />
           <ListItem
-            title="領袖高峰會主題曲"
+            title="高峰會主題曲"
             icon="queue-music"
             onPress={() => {
               navigation.navigate('Lyrics');

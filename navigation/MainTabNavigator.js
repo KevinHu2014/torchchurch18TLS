@@ -222,7 +222,7 @@ const InformationStack = createStackNavigator({
     screen: MusicPlayer,
     path: '/lyrics',
     navigationOptions: () => ({
-      title: '領袖高峰會主題曲',
+      title: '高峰會主題曲',
       headerTintColor: Colors.header,
       headerStyle: {
         height: 60,

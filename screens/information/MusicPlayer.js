@@ -85,6 +85,7 @@ export default class Music extends React.Component {
       shouldDuckAndroid: true,
       interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DO_NOT_MIX,
     });
+    await this.playbackObject.setIsLoopingAsync(true);
     await this.playbackObject.playAsync();
     return true;
   }
@@ -142,7 +143,7 @@ export default class Music extends React.Component {
               color="white"
               onPress={async () => {
                 if (!play) {
-                  await this.loadMusic({ uri: 'https://firebasestorage.googleapis.com/v0/b/tls2018-6a8fb.appspot.com/o/%E6%B0%B8%E6%81%86%E9%96%83%E8%80%80with%E5%8D%A1%E4%BC%8Ademo.mp3?alt=media&token=d79f379e-8661-4e94-b578-9bd0f3bdd51e' });
+                  await this.loadMusic({ uri: 'https://firebasestorage.googleapis.com/v0/b/tls2018-6a8fb.appspot.com/o/2018%E7%81%AB%E6%8A%8A%E6%95%99%E6%9C%83%E7%89%B9%E6%9C%83%E4%B8%BB%E9%A1%8C%E6%9B%B2%E2%80%9C%E6%B0%B8%E6%81%86%E9%96%83%E8%80%80%E2%80%9D%E6%9C%80%E7%B5%82%E7%89%88%20.mp3?alt=media&token=d24d3c50-5bd2-49ff-9b10-6053dba862b9' });
                   await this.playMusic();
                   this.setState({ play: !play });
                 } else {
