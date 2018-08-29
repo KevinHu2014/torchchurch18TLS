@@ -8,7 +8,7 @@ import AppNavigator from './navigation/AppNavigator';
 
 export default class AppContainer extends React.Component {
   state = {
-    visible: true,
+    visible: false,
   }
 
   componentDidMount() {
