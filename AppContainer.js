@@ -8,23 +8,21 @@ import AppNavigator from './navigation/AppNavigator';
 
 export default class AppContainer extends React.Component {
   state = {
-    visible: false,
+    visible: true,
   }
 
   componentDidMount() {
     this._notificationSubscription = this._registerForPushNotifications();
-    BackHandler.addEventListener('hardwareBackPress', this.handleBackPress);
+    this.backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
+      console.log('backkkkkkkk pressed!!');
+      this.setState({ visible: true });
+      return true;
+    });
   }
 
   componentWillUnmount() {
     this._notificationSubscription && this._notificationSubscription.remove();
-    BackHandler.removeEventListener('hardwareBackPress', this.handleBackPress);
-  }
-
-  handleBackPress = () => {
-    console.log('backkkkkkkk pressed!!');
-    this.goBack();
-    return true;
+    this.backHandler.remove();
   }
 
   _handleNotification = ({ origin, data }) => {
@@ -38,10 +36,6 @@ export default class AppContainer extends React.Component {
       NavigationActions.navigate({ routeName: data.path }),
     );
   };
-
-  async goBack() {
-    await this.setState({ visible: true });
-  }
 
   _registerForPushNotifications() {
     // Send our push token over to our backend so we can receive notifications
