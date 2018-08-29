@@ -1,16 +1,30 @@
 import { Notifications } from 'expo';
 import React from 'react';
+import { BackHandler, View } from 'react-native';
 import { NavigationActions } from 'react-navigation';
+import { Snackbar } from 'react-native-paper';
 import registerForPushNotificationsAsync from './api/registerForPushNotificationsAsync';
 import AppNavigator from './navigation/AppNavigator';
 
 export default class AppContainer extends React.Component {
+  state = {
+    visible: false,
+  }
+
   componentDidMount() {
     this._notificationSubscription = this._registerForPushNotifications();
+    BackHandler.addEventListener('hardwareBackPress', this.handleBackPress);
   }
 
   componentWillUnmount() {
     this._notificationSubscription && this._notificationSubscription.remove();
+    BackHandler.removeEventListener('hardwareBackPress', this.handleBackPress);
+  }
+
+  handleBackPress = () => {
+    console.log('backkkkkkkk pressed!!');
+    this.goBack();
+    return true;
   }
 
   _handleNotification = ({ origin, data }) => {
@@ -25,6 +39,10 @@ export default class AppContainer extends React.Component {
     );
   };
 
+  async goBack() {
+    await this.setState({ visible: true });
+  }
+
   _registerForPushNotifications() {
     // Send our push token over to our backend so we can receive notifications
     // You can comment the following line out if you want to stop receiving
@@ -37,10 +55,26 @@ export default class AppContainer extends React.Component {
   }
 
   render() {
+    const { visible } = this.state;
     return (
-      <AppNavigator
-        ref={(nav) => { this.navigator = nav; }}
-      />
+      <View style={{ flex: 1 }}>
+        <AppNavigator
+          ref={(nav) => { this.navigator = nav; }}
+        />
+        <Snackbar
+          visible={visible}
+          duration={2000}
+          onDismiss={() => this.setState({ visible: false })}
+          action={{
+            label: '確定',
+            onPress: () => {
+              BackHandler.exitApp();
+            },
+          }}
+        >
+          確定要離開應用程式嗎？
+        </Snackbar>
+      </View>
     );
   }
 }
