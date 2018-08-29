@@ -26,7 +26,7 @@ export default class ScheduleScreen extends React.Component {
     const url = 'https://s3-ap-southeast-1.amazonaws.com/torch-2018/tlsschedule.json';
     axios.get(url)
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         this.setState({ Data: response.data });
       })
       .catch((err) => { console.log(err); });

@@ -47,8 +47,8 @@ export default (async function registerForPushNotificationsAsync() {
 
   // Get the token that uniquely identifies this device
   const token = await Notifications.getExpoPushTokenAsync();
-  console.log('token >>>>>>>>>>>');
-  console.log(token);
+  // console.log('token >>>>>>>>>>>');
+  // console.log(token);
 
   // clear warning
   // https://github.com/facebook/react-native/issues/12981
