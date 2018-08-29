@@ -3,6 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import AnimatedTopTabs from '../components/AnimatedTopTabs';
 import LinkList from '../components/LinkList';
 import Culture from '../components/Culture';
+import LatestInfo from '../components/LatestInfo';
 
 const styles = StyleSheet.create({
   container: {
@@ -29,6 +30,11 @@ export default class MoreScreen extends React.Component {
     if (currentTab === 1) {
       return (
         <LinkList />
+      );
+    }
+    if (currentTab === 2) {
+      return (
+        <LatestInfo />
       );
     }
     return true;
