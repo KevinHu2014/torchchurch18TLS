@@ -1,12 +1,12 @@
 {
   "expo": {
-    "name": "18火把特會",
+    "name": "2018TLS",
     "description": "A very interesting project.",
     "slug": "tls18torchchurch",
     "privacy": "public",
     "sdkVersion": "28.0.0",
     "platforms": ["ios", "android"],
-    "version": "1.0.6",
+    "version": "1.0.7",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "notification": {
@@ -33,7 +33,7 @@
     },
     "android": {
       "package": "com.torchchurch18tls",
-      "versionCode": 3,
+      "versionCode": 4,
       "googleServicesFile": "./google-services.json",
       "icon": "./assets/images/icon.png"
     },
