@@ -1,54 +1,16 @@
 import { Notifications } from 'expo';
 import React from 'react';
-import { BackHandler, DeviceEventEmitter, View } from 'react-native';
 import { NavigationActions } from 'react-navigation';
-import { Snackbar } from 'react-native-paper';
 import registerForPushNotificationsAsync from './api/registerForPushNotificationsAsync';
 import AppNavigator from './navigation/AppNavigator';
 
 export default class AppContainer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.backPressSubscriptions = new Set();
-    this.state = {
-      visible: false,
-    };
-  }
-
   componentDidMount() {
     this._notificationSubscription = this._registerForPushNotifications();
-    // https://github.com/facebook/react-native/issues/3223#issuecomment-355064410
-    DeviceEventEmitter.removeAllListeners('hardwareBackPress');
-    DeviceEventEmitter.addListener('hardwareBackPress', () => {
-      let invokeDefault = true;
-      const subscriptions = [];
-
-      this.backPressSubscriptions.forEach(sub => subscriptions.push(sub));
-
-      for (let i = 0; i < subscriptions.reverse().length; i += 1) {
-        if (subscriptions[i]()) {
-          invokeDefault = false;
-          break;
-        }
-      }
-
-      if (invokeDefault) {
-        BackHandler.exitApp();
-      }
-    });
-
-    this.backPressSubscriptions.add(this.handleHardwareBack);
   }
 
   componentWillUnmount() {
     this._notificationSubscription && this._notificationSubscription.remove();
-    DeviceEventEmitter.removeAllListeners('hardwareBackPress');
-    this.backPressSubscriptions.clear();
-  }
-
-  handleHardwareBack = () => {
-    console.log('backkkkkkkk pressed!!');
-    this.setState({ visible: true });
   }
 
   _handleNotification = ({ origin, data }) => {
@@ -75,26 +37,10 @@ export default class AppContainer extends React.Component {
   }
 
   render() {
-    const { visible } = this.state;
     return (
-      <View style={{ flex: 1 }}>
-        <AppNavigator
-          ref={(nav) => { this.navigator = nav; }}
-        />
-        <Snackbar
-          visible={visible}
-          duration={2000}
-          onDismiss={() => this.setState({ visible: false })}
-          action={{
-            label: '確定',
-            onPress: () => {
-              BackHandler.exitApp();
-            },
-          }}
-        >
-          確定要離開應用程式嗎？
-        </Snackbar>
-      </View>
+      <AppNavigator
+        ref={(nav) => { this.navigator = nav; }}
+      />
     );
   }
 }
