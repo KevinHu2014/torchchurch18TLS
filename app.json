@@ -26,7 +26,7 @@
       "**/*"
     ],
     "ios": {
-      "bundleIdentifier": "com.tls18torchchurch",
+      "bundleIdentifier": "com.torchchurch18tls",
       "supportsTablet": true,
       "icon": "./assets/images/iconIos.png",
       "infoPlist": { "NSLocationWhenInUseUsageDescription": "We didn't use your location. It's deafult feature from expo." }
