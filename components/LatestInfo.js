@@ -7,6 +7,7 @@ import {
   Title,
   Paragraph,
 } from 'react-native-paper';
+import axios from 'axios';
 import Colors from '../constants/Colors';
 
 const styles = StyleSheet.create({
@@ -16,22 +17,30 @@ const styles = StyleSheet.create({
   },
 });
 
-const Data = [
-  {
-    title: '火把領袖高峰會通知',
-    index: 1,
-    content: '2018火把領袖高峰會即將於明天展開，下午5:30起開放物資領取櫃檯。地點在台鐵東二門1樓入口，請務必記得攜帶您的報名成功憑證，換取物資包。祝福您在高峰會中有豐富的收穫。',
-  },
-  {
-    title: '火把領袖高峰會通知',
-    index: 2,
-    content: '2018火把領袖高峰會即將於明天展開，下午5:30起開放物資領取櫃檯。地點在台鐵東二門1樓入口，請務必記得攜帶您的報名成功憑證，換取物資包。祝福您在高峰會中有豐富的收穫。',
-  },
-];
-
 export default class LatestInfo extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      Data: [],
+    };
+  }
+
+  componentDidMount() {
+    const url = 'https://s3-ap-southeast-1.amazonaws.com/torch-2018/latestInfo.json';
+    axios.get(url)
+      .then((response) => {
+        console.log(response.data);
+        const temp = response.data.LatestInfo;
+        temp.sort((x, y) => {
+          return x.index < y.index ? 1 : -1;
+        });
+        this.setState({ Data: temp });
+      })
+      .catch((err) => { console.log(err); });
+  }
+
   renderContent() { // eslint-disable-line class-methods-use-this
-    // TODO: 在幫我寫個用index 排序
+    const { Data } = this.state;
     return Data.map((info) => {
       const {
         title, content, index,
