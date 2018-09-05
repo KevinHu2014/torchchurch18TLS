@@ -6,7 +6,7 @@
     "privacy": "public",
     "sdkVersion": "28.0.0",
     "platforms": ["ios", "android"],
-    "version": "1.0.7",
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "notification": {
@@ -26,10 +26,9 @@
       "**/*"
     ],
     "ios": {
-      "bundleIdentifier": "com.torchchurch18tls",
+      "bundleIdentifier": "com.torch18lts",
       "supportsTablet": true,
-      "icon": "./assets/images/iconIos.png",
-      "infoPlist": { "NSLocationWhenInUseUsageDescription": "We didn't use your location. It's deafult feature from expo." }
+      "icon": "./assets/images/iconIos.png"
     },
     "android": {
       "package": "com.torchchurch18tls",
