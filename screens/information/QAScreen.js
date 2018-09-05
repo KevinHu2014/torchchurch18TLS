@@ -120,7 +120,7 @@ export default class QA extends React.Component {
         },
         {
           _id: 1,
-          text: '別擔心，請至高峰會櫃臺確認報名資訊，再以工本費50元購買新的物資包。',
+          text: '別擔心，請至高峰會櫃臺洽詢即可。',
           createdAt: new Date(),
           user: {
             _id: 2,
