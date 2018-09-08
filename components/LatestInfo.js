@@ -26,18 +26,13 @@ export default class LatestInfo extends React.Component {
     };
   }
 
-  componentDidMount() {
+  async componentDidMount() {
+    const config = { headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-cache' } };
     const url = 'https://s3-ap-southeast-1.amazonaws.com/torch-2018/latestInfo.json';
-    axios.get(url)
-      .then((response) => {
-        console.log(response.data);
-        const temp = response.data.LatestInfo;
-        temp.sort((x, y) => {
-          return x.index < y.index ? 1 : -1;
-        });
-        this.setState({ Data: temp });
-      })
-      .catch((err) => { console.log(err); });
+    const { data } = await axios.get(url, config);
+    const temp = data.LatestInfo;
+    temp.sort((x, y) => (x.index < y.index ? 1 : -1));
+    this.setState({ Data: temp });
   }
 
   renderContent() { // eslint-disable-line class-methods-use-this
@@ -69,20 +64,15 @@ export default class LatestInfo extends React.Component {
         refreshControl={(
           <RefreshControl
             refreshing={isRefreshing}
-            onRefresh={() => {
+            onRefresh={async () => {
               this.setState({ isRefreshing: true });
+              const config = { headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-cache' } };
               const url = 'https://s3-ap-southeast-1.amazonaws.com/torch-2018/latestInfo.json';
-              axios.get(url)
-                .then((response) => {
-                  console.log(response.data);
-                  const temp = response.data.LatestInfo;
-                  temp.sort((x, y) => {
-                    return x.index < y.index ? 1 : -1;
-                  });
-                  this.setState({ Data: temp });
-                  this.setState({ isRefreshing: false });
-                })
-                .catch((err) => { console.log(err); });
+              const { data } = await axios.get(url, config);
+              const temp = data.LatestInfo;
+              temp.sort((x, y) => (x.index < y.index ? 1 : -1));
+              this.setState({ Data: temp });
+              this.setState({ isRefreshing: false });
             }}
           />)}
       >

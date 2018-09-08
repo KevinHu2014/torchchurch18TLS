@@ -23,14 +23,11 @@ export default class ScheduleScreen extends React.Component {
     };
   }
 
-  componentDidMount() {
+  async componentDidMount() {
+    const config = { headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-cache' } };
     const url = 'https://s3-ap-southeast-1.amazonaws.com/torch-2018/tlsschedule.json';
-    axios.get(url)
-      .then((response) => {
-        // console.log(response.data);
-        this.setState({ Data: response.data });
-      })
-      .catch((err) => { console.log(err); });
+    const { data } = await axios.get(url, config);
+    this.setState({ Data: data });
   }
 
   handleTabChange = value => this.setState({ currentTab: value });
@@ -109,16 +106,14 @@ export default class ScheduleScreen extends React.Component {
           refreshControl={(
             <RefreshControl
               refreshing={isRefreshing}
-              onRefresh={() => {
+              onRefresh={async () => {
                 this.setState({ isRefreshing: true });
+                const config = { headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-cache' } };
                 const url = 'https://s3-ap-southeast-1.amazonaws.com/torch-2018/tlsschedule.json';
-                axios.get(url)
-                  .then((response) => {
-                     console.log(response.data);
-                    this.setState({ Data: response.data });
-                    this.setState({ isRefreshing: false });
-                  })
-                  .catch((err) => { console.log(err); });
+                const { data } = await axios.get(url, config);
+                console.log(data);
+                this.setState({ Data: data });
+                this.setState({ isRefreshing: false });
               }}
             />)}
         >
