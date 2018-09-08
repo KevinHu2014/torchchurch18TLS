@@ -93,7 +93,7 @@ export default class TransformText extends React.Component {
                   {'AMAZING\n'}
                 </Title>
                 <Paragraph style={[styles.textStyle, { textAlign: 'left' }]}>
-                  {'You have found the easter egg in the App. Well down. Show it to your friends around you.\nThank you for using our App. It really means a lot to us. Hoping you really enjoyed it.\nSpecial thanks to Zoey for all the design icon and color in the App. Special thanks to Ian Yan for the document of the App. Special thanks to my coworker Adam for all the support.\n I am Kevin by the way. You can find me on Github. https://github.com/KevinHu2014'}
+                  {'You have found the easter egg in the App. Well done. Show it to your friends around you.\nThank you for using our App. It really means a lot to us. Hoping you really enjoyed it.\nSpecial thanks to Zoey for all the design icons and color in the App. Special thanks to Ian Yan for the documents of the App. Special thanks to my coworker Adam for all the support.\n I am Kevin by the way. You can find me on Github. https://github.com/KevinHu2014'}
                 </Paragraph>
               </ScrollView>
             )
