@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  StyleSheet, View, ScrollView,
+  StyleSheet, View, ScrollView, RefreshControl,
   Platform,
 } from 'react-native';
 import PropTypes from 'prop-types';
@@ -19,6 +19,7 @@ export default class ScheduleScreen extends React.Component {
     this.state = {
       currentTab: 0,
       Data: null,
+      isRefreshing: false,
     };
   }
 
@@ -93,6 +94,7 @@ export default class ScheduleScreen extends React.Component {
   }
 
   render() {
+    const { isRefreshing } = this.state;
     return (
       <View style={styles.container}>
         <AnimatedTopTabs
@@ -102,7 +104,24 @@ export default class ScheduleScreen extends React.Component {
           tabTitles={['Day 1', 'Day 2', 'Day 3']}
           onChangeTab={this.handleTabChange}
         />
-        <ScrollView style={{ flex: 1, backgroundColor: '#fff' }}>
+        <ScrollView 
+          style={{ flex: 1, backgroundColor: '#fff' }}
+          refreshControl={(
+            <RefreshControl
+              refreshing={isRefreshing}
+              onRefresh={() => {
+                this.setState({ isRefreshing: true });
+                const url = 'https://s3-ap-southeast-1.amazonaws.com/torch-2018/tlsschedule.json';
+                axios.get(url)
+                  .then((response) => {
+                     console.log(response.data);
+                    this.setState({ Data: response.data });
+                    this.setState({ isRefreshing: false });
+                  })
+                  .catch((err) => { console.log(err); });
+              }}
+            />)}
+        >
           {this.renderContent()}
         </ScrollView>
       </View>
