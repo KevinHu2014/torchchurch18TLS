@@ -24,7 +24,8 @@ const styles = {
     backgroundColor: 'transparent',
     color: Colors.tintColor,
     fontSize: 10,
-    marginBottom: 1.5,
+    marginBottom: Platform.isPad ? 0 : 1.5,
+    marginLeft: Platform.isPad ? 15 : 0,
   },
 };
 
