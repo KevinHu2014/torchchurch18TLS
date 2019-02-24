@@ -34,7 +34,8 @@
       "package": "com.torchchurch18tls",
       "versionCode": 4,
       "googleServicesFile": "./google-services.json",
-      "icon": "./assets/images/icon.png"
+      "icon": "./assets/images/icon.png",
+      "permissions": []
     },
     "androidStatusBar": {
       "backgroundColor": "#C0C0C0"
